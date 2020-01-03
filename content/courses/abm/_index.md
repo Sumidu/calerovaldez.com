@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: Agent-Based Modeling - Seminar
 summary: In this seminar, students were introduced to the programming environment NetLogo.
-weight: 99
+weight: 102
 
 # Page metadata.
 title: Agent-Based Modeling - Seminar

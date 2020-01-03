@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: 79.42933 - Usability, User Diversity und Technikakzeptanz - Seminar
 summary: In this course, students learn how to apply the methods of empirical research in a self-directed research project.
-weight: 1
+weight: 3
 
 # Page metadata.
 title: Usability, User Diversity und Technikakzeptanz - Seminar
@@ -18,7 +18,7 @@ type: docs  # Do not modify.
 menu:
   uut:
     name: Overview
-    weight: 1
+    weight: 3
 ---
 
 In this course students learn how to apply the methods of empirical research in a self-directed research project. The focus is to integrate user-diversity aspects with usability and technology acceptance in differing topcis. Students may pick their own research question, decide on methods and collect their own data. In several project "pitches" students discuss the topics and their current state of work. 

@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: 79.51372 Bachelorcolloquium - Seminar
 summary: In this course, the topic is good scientific writing. 
-weight: 2
+weight: 4
 
 # Page metadata.
 title: 79.51372 Bachelorcolloquium - Seminar
@@ -21,7 +21,7 @@ categories: ["seminar"]
 menu:
   colloquia:
     name: Overview
-    weight: 1
+    weight: 4
 ---
 
 

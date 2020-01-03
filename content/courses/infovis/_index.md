@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: Information Visualization and Language - Seminar
 summary: In this course, the topic is the use and reflection of visualization techniques. 
-weight: 3
+weight: 101
 
 # Page metadata.
 title: Information Visualization and Language - Seminar

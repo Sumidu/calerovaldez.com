@@ -2,7 +2,7 @@
 # Course title, summary, and position.
 linktitle: 79.41689 - Empirisch-experimentelle Forschungsmethoden in der Anwendung - Seminar
 summary: In this course, the topic is the use and reflection of scientific methods. 
-weight: 1
+weight: 2
 
 # Page metadata.
 title: Empirisch-experimentelle Forschungsmethoden in der Anwendung - Seminar
@@ -18,7 +18,7 @@ type: docs  # Do not modify.
 menu:
   methodensem:
     name: Overview
-    weight: 1
+    weight: 2
 ---
 
 ## Course information

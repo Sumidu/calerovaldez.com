@@ -14,11 +14,13 @@ role: Junior Research Group Leader
 
 # Organizations/Affiliations
 organizations:
+- name: Human-Computer Interaction Center
+  url: "http://www.comm.rwth-aachen.de"
 - name: RWTH Aachen University
   url: "http://www.rwth-aachen.de"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am the research group leader of the junior research group "Digitale Mündigkeit" studying effects human-algorithm interaction.
+bio: I am the research group leader of the research group "Digitale Mündigkeit" studying effects human-algorithm interaction.
 
 interests:
 - Human-Computer Interaction
@@ -63,11 +65,17 @@ social:
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0002-6214-1461
+- icon: youtube
+  icon_pack: fab
+  link: https://www.youtube.com/channel/UClF6-jdeBu9Kkz32n7hc6rg
+- icon: linkedin
+  icon_pack: ai
+  link: https://www.linkedin.com/in/andré-calero-valdez-910bba22/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#  link: files/cv.pdf
+- icon: cv
+  icon_pack: ai
+  link: files/cv-en.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: "andrecalerovaldez@gmail.com"

@@ -1,0 +1,143 @@
+---
+title: Using the apastats package to write reproducible reports
+author: admin
+date: '2020-01-04'
+slug: using-the-apastats-package-to-write-reproducible-reports
+categories: []
+tags:
+  - stats
+  - R
+  - tutorial
+subtitle: ''
+summary: ''
+math: true
+
+authors: []
+lastmod: '2020-01-04T02:05:01+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#knitr::opts_chunk$set(include = FALSE)
+library(tidyverse)
+library(knitr)
+library(glue)
+library(emo)
+set.seed(1)
+```
+
+
+## Overview
+
+Writing a research report using RMarkdown allows you to start your analysis even before you have collected the data. This is especially helpful in report writing and thesis writing. When you, web-crawler, or a panel are still collecting data, you can already start writing the thesis.
+However, writing results before having the data is somewhat challenging. Keep in mind that writing a discussion before having collected the data is a lot harder.
+
+What we're going to need two things:
+
+- a package that formats output in a way that we need it. In our case `apastats`.
+- string manipulation: `stringr` and `glue`
+
+## Installing apastats
+
+You can install the `apastats` package using the following command:
+
+```r
+devtools::install_github('achetverikov/apastats',subdir='apastats')
+```
+
+Now, we can start. Let's assume we have already collected the following data about iris flowers `r emo::ji("wink")`.
+
+```{r}
+df <- iris %>% sample_n(5) 
+df %>% kable()
+```
+
+## Deciding on our hypothesis
+
+We have found in literature that the *setosa* species has a rather small petal length of only about 3-4 cm. Since your sampling from random flowers you want to test whether your sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be $H_0: PL > 5$.
+
+## Selecting a test
+
+We would test this using a one-sample t-test on the subset of data.
+```{r}
+res <- df %>% 
+  filter(Species == "setosa") %>% 
+  pull(Petal.Length) %>% 
+  t.test(mu = 5)
+res
+```
+
+Well... This is not our final data yet, so we should not bee too happy about this result already. And this looks nothing like a report.
+How can we write the test and the interpretation that it incorporates the results?
+
+## Using apastats
+
+The `describe.ttest` function returns the correctly formatted markdown for reporting a t-test. So the following would always generate the correct output.
+
+```{r}
+tresult <- apastats::describe.ttest(res)
+tresult
+```
+
+Meh. This is not really helpful either, right? We must include the text result as an inline result using the `` `r "\u0060r tresult\u0060"` ``. Then we can say:
+
+> Setosa iris have petal leaves whose length is statistically significant different from 5 (`r tresult`).
+
+## Preparing for both outcomes
+
+This is nice, but we don't know whether our sample of $n=2$ actually represents the population. Therefore, we must prepare for both cases. Here the `glue` package is helpful in filling in the blanks in pre-written output.
+
+```{r}
+library(glue)
+
+
+# test the p-value
+alpha_level <- .05
+
+# default is not significant
+have_txt <- "do not have"
+if (res$p.value < alpha_level) {
+  have_txt <- "have"
+} 
+
+phrase <- glue("> Setosa iris {have_txt} petal leaves whose length is ", 
+               "statistically significant different from 5 ({tresult}).")
+```
+
+This we can now output using: `` `r "\u0060r phrase\u0060"` ``.
+
+`r phrase`
+
+## Collecting the final data 
+
+Now, we can run the full script again, but with the full data set. I have omitted unnecessary output in the following code chunk and directly construct the output phrase.
+
+```{r}
+# run the test
+res <- iris %>% 
+  filter(Species == "setosa") %>% 
+  pull(Petal.Length) %>% 
+  t.test(mu = 5)
+
+# describe results
+tresult <- apastats::describe.ttest(res)
+
+# generate phrase
+have_txt <- "do not have"
+if (res$p.value < alpha_level) {
+  have_txt <- "have"
+} 
+
+# you can use markdown here as well
+phrase <- glue("> Setosa iris {have_txt} petal leaves whose length is ",  
+               "statistically significant different from 5 ({tresult}).")
+```
+
+The final outcome of our analysis now is:
+
+`r phrase`

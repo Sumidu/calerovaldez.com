@@ -1,0 +1,177 @@
+---
+title: Using the apastats package to write reproducible reports
+author: admin
+date: '2020-01-04'
+slug: using-the-apastats-package-to-write-reproducible-reports
+categories: []
+tags:
+  - stats
+  - R
+  - tutorial
+subtitle: ''
+summary: ''
+math: true
+
+authors: []
+lastmod: '2020-01-04T02:05:01+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>Writing a research report using RMarkdown allows you to start your analysis even before you have collected the data. This is especially helpful in report writing and thesis writing. When you, web-crawler, or a panel are still collecting data, you can already start writing the thesis.
+However, writing results before having the data is somewhat challenging. Keep in mind that writing a discussion before having collected the data is a lot harder.</p>
+<p>What we’re going to need two things:</p>
+<ul>
+<li>a package that formats output in a way that we need it. In our case <code>apastats</code>.</li>
+<li>string manipulation: <code>stringr</code> and <code>glue</code></li>
+</ul>
+</div>
+<div id="installing-apastats" class="section level2">
+<h2>Installing apastats</h2>
+<p>You can install the <code>apastats</code> package using the following command:</p>
+<pre class="r"><code>devtools::install_github(&#39;achetverikov/apastats&#39;,subdir=&#39;apastats&#39;)</code></pre>
+<p>Now, we can start. Let’s assume we have already collected the following data about iris flowers 😉.</p>
+<pre class="r"><code>df &lt;- iris %&gt;% sample_n(5) 
+df %&gt;% kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Sepal.Length</th>
+<th align="right">Sepal.Width</th>
+<th align="right">Petal.Length</th>
+<th align="right">Petal.Width</th>
+<th align="left">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">5.1</td>
+<td align="right">3.4</td>
+<td align="right">1.5</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+<tr class="even">
+<td align="right">5.7</td>
+<td align="right">2.8</td>
+<td align="right">4.5</td>
+<td align="right">1.3</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="odd">
+<td align="right">5.4</td>
+<td align="right">3.0</td>
+<td align="right">4.5</td>
+<td align="right">1.5</td>
+<td align="left">versicolor</td>
+</tr>
+<tr class="even">
+<td align="right">6.3</td>
+<td align="right">2.8</td>
+<td align="right">5.1</td>
+<td align="right">1.5</td>
+<td align="left">virginica</td>
+</tr>
+<tr class="odd">
+<td align="right">4.7</td>
+<td align="right">3.2</td>
+<td align="right">1.6</td>
+<td align="right">0.2</td>
+<td align="left">setosa</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="deciding-on-our-hypothesis" class="section level2">
+<h2>Deciding on our hypothesis</h2>
+<p>We have found in literature that the <em>setosa</em> species has a rather small petal length of only about 3-4 cm. Since your sampling from random flowers you want to test whether your sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be <span class="math inline">\(H_0: PL &gt; 5\)</span>.</p>
+</div>
+<div id="selecting-a-test" class="section level2">
+<h2>Selecting a test</h2>
+<p>We would test this using a one-sample t-test on the subset of data.</p>
+<pre class="r"><code>res &lt;- df %&gt;% 
+  filter(Species == &quot;setosa&quot;) %&gt;% 
+  pull(Petal.Length) %&gt;% 
+  t.test(mu = 5)
+res</code></pre>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  .
+## t = -69, df = 1, p-value = 0.009226
+## alternative hypothesis: true mean is not equal to 5
+## 95 percent confidence interval:
+##  0.9146898 2.1853102
+## sample estimates:
+## mean of x 
+##      1.55</code></pre>
+<p>Well… This is not our final data yet, so we should not bee too happy about this result already. And this looks nothing like a report.
+How can we write the test and the interpretation that it incorporates the results?</p>
+</div>
+<div id="using-apastats" class="section level2">
+<h2>Using apastats</h2>
+<p>The <code>describe.ttest</code> function returns the correctly formatted markdown for reporting a t-test. So the following would always generate the correct output.</p>
+<pre class="r"><code>tresult &lt;- apastats::describe.ttest(res)
+tresult</code></pre>
+<pre><code>## [1] &quot;_t_(1.0) = -69.00, _p_ = .009&quot;</code></pre>
+<p>Meh. This is not really helpful either, right? We must include the text result as an inline result using the <code>`r tresult`</code>. Then we can say:</p>
+<blockquote>
+<p>Setosa iris have petal leaves whose length is statistically significant different from 5 (<em>t</em>(1.0) = -69.00, <em>p</em> = .009).</p>
+</blockquote>
+</div>
+<div id="preparing-for-both-outcomes" class="section level2">
+<h2>Preparing for both outcomes</h2>
+<p>This is nice, but we don’t know whether our sample of <span class="math inline">\(n=2\)</span> actually represents the population. Therefore, we must prepare for both cases. Here the <code>glue</code> package is helpful in filling in the blanks in pre-written output.</p>
+<pre class="r"><code>library(glue)
+
+
+# test the p-value
+alpha_level &lt;- .05
+
+# default is not significant
+have_txt &lt;- &quot;do not have&quot;
+if (res$p.value &lt; alpha_level) {
+  have_txt &lt;- &quot;have&quot;
+} 
+
+phrase &lt;- glue(&quot;&gt; Setosa iris {have_txt} petal leaves whose length is &quot;, 
+               &quot;statistically significant different from 5 ({tresult}).&quot;)</code></pre>
+<p>This we can now output using: <code>`r phrase`</code>.</p>
+<blockquote>
+<p>Setosa iris have petal leaves whose length is statistically significant different from 5 (<em>t</em>(1.0) = -69.00, <em>p</em> = .009).</p>
+</blockquote>
+</div>
+<div id="collecting-the-final-data" class="section level2">
+<h2>Collecting the final data</h2>
+<p>Now, we can run the full script again, but with the full data set. I have omitted unnecessary output in the following code chunk and directly construct the output phrase.</p>
+<pre class="r"><code># run the test
+res &lt;- iris %&gt;% 
+  filter(Species == &quot;setosa&quot;) %&gt;% 
+  pull(Petal.Length) %&gt;% 
+  t.test(mu = 5)
+
+# describe results
+tresult &lt;- apastats::describe.ttest(res)
+
+# generate phrase
+have_txt &lt;- &quot;do not have&quot;
+if (res$p.value &lt; alpha_level) {
+  have_txt &lt;- &quot;have&quot;
+} 
+
+# you can use markdown here as well
+phrase &lt;- glue(&quot;&gt; Setosa iris {have_txt} petal leaves whose length is &quot;,  
+               &quot;statistically significant different from 5 ({tresult}).&quot;)</code></pre>
+<p>The final outcome of our analysis now is:</p>
+<blockquote>
+<p>Setosa iris have petal leaves whose length is statistically significant different from 5 (<em>t</em>(49.0) = -144.06, <em>p</em> &lt; .001).</p>
+</blockquote>
+</div>

@@ -57,11 +57,13 @@ df <- iris %>% sample_n(5)
 df %>% kable()
 ```
 
-## Deciding on our hypothesis
+## The analysis
 
-We have found in literature that the *setosa* species has a rather small petal length of only about 3-4 cm. Since your sampling from random flowers you want to test whether your sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be $H_0: PL > 5$.
+### Deciding on our hypothesis
 
-## Selecting a test
+We have found in literature that the *setosa* species has a rather small petal length of only about 3-4 cm. Since we are sampling from random flowers we want to test whether our sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be $H_0: PL > 5$.
+
+### Selecting a test
 
 We would test this using a one-sample t-test on the subset of data.
 ```{r}
@@ -75,7 +77,7 @@ res
 Well... This is not our final data yet, so we should not bee too happy about this result already. And this looks nothing like a report.
 How can we write the test and the interpretation that it incorporates the results?
 
-## Using apastats
+### Using apastats to describe
 
 The `describe.ttest` function returns the correctly formatted markdown for reporting a t-test. So the following would always generate the correct output.
 
@@ -88,7 +90,7 @@ Meh. This is not really helpful either, right? We must include the text result a
 
 > Setosa iris have petal leaves whose length is statistically significant different from 5 (`r tresult`).
 
-## Preparing for both outcomes
+### Preparing for both outcomes
 
 This is nice, but we don't know whether our sample of $n=2$ actually represents the population. Therefore, we must prepare for both cases. Here the `glue` package is helpful in filling in the blanks in pre-written output.
 
@@ -113,7 +115,7 @@ This we can now output using: `` `r "\u0060r phrase\u0060"` ``.
 
 `r phrase`
 
-## Collecting the final data 
+## Collecting the final data and running our analysis
 
 Now, we can run the full script again, but with the full data set. I have omitted unnecessary output in the following code chunk and directly construct the output phrase.
 

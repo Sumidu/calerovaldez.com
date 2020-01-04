@@ -90,12 +90,14 @@ df %&gt;% kable()</code></pre>
 </tbody>
 </table>
 </div>
-<div id="deciding-on-our-hypothesis" class="section level2">
-<h2>Deciding on our hypothesis</h2>
-<p>We have found in literature that the <em>setosa</em> species has a rather small petal length of only about 3-4 cm. Since your sampling from random flowers you want to test whether your sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be <span class="math inline">\(H_0: PL &gt; 5\)</span>.</p>
+<div id="the-analysis" class="section level2">
+<h2>The analysis</h2>
+<div id="deciding-on-our-hypothesis" class="section level3">
+<h3>Deciding on our hypothesis</h3>
+<p>We have found in literature that the <em>setosa</em> species has a rather small petal length of only about 3-4 cm. Since we are sampling from random flowers we want to test whether our sample is also smaller than, let us say, 5cm. Thus, our null hypothesis would be <span class="math inline">\(H_0: PL &gt; 5\)</span>.</p>
 </div>
-<div id="selecting-a-test" class="section level2">
-<h2>Selecting a test</h2>
+<div id="selecting-a-test" class="section level3">
+<h3>Selecting a test</h3>
 <p>We would test this using a one-sample t-test on the subset of data.</p>
 <pre class="r"><code>res &lt;- df %&gt;% 
   filter(Species == &quot;setosa&quot;) %&gt;% 
@@ -116,8 +118,8 @@ res</code></pre>
 <p>Well… This is not our final data yet, so we should not bee too happy about this result already. And this looks nothing like a report.
 How can we write the test and the interpretation that it incorporates the results?</p>
 </div>
-<div id="using-apastats" class="section level2">
-<h2>Using apastats</h2>
+<div id="using-apastats-to-describe" class="section level3">
+<h3>Using apastats to describe</h3>
 <p>The <code>describe.ttest</code> function returns the correctly formatted markdown for reporting a t-test. So the following would always generate the correct output.</p>
 <pre class="r"><code>tresult &lt;- apastats::describe.ttest(res)
 tresult</code></pre>
@@ -127,8 +129,8 @@ tresult</code></pre>
 <p>Setosa iris have petal leaves whose length is statistically significant different from 5 (<em>t</em>(1.0) = -69.00, <em>p</em> = .009).</p>
 </blockquote>
 </div>
-<div id="preparing-for-both-outcomes" class="section level2">
-<h2>Preparing for both outcomes</h2>
+<div id="preparing-for-both-outcomes" class="section level3">
+<h3>Preparing for both outcomes</h3>
 <p>This is nice, but we don’t know whether our sample of <span class="math inline">\(n=2\)</span> actually represents the population. Therefore, we must prepare for both cases. Here the <code>glue</code> package is helpful in filling in the blanks in pre-written output.</p>
 <pre class="r"><code>library(glue)
 
@@ -149,8 +151,9 @@ phrase &lt;- glue(&quot;&gt; Setosa iris {have_txt} petal leaves whose length is
 <p>Setosa iris have petal leaves whose length is statistically significant different from 5 (<em>t</em>(1.0) = -69.00, <em>p</em> = .009).</p>
 </blockquote>
 </div>
-<div id="collecting-the-final-data" class="section level2">
-<h2>Collecting the final data</h2>
+</div>
+<div id="collecting-the-final-data-and-running-our-analysis" class="section level2">
+<h2>Collecting the final data and running our analysis</h2>
 <p>Now, we can run the full script again, but with the full data set. I have omitted unnecessary output in the following code chunk and directly construct the output phrase.</p>
 <pre class="r"><code># run the test
 res &lt;- iris %&gt;% 

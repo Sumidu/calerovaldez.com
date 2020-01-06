@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11 - Explorative Statistik, nicht-parametrische Verfahren</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Dr. André Calero Valdez Prof. Dr. Martina Ziefle    Human-Computer Interaction Center" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="hcic.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 11 - Explorative Statistik, nicht-parametrische Verfahren
+## Sozialwissenschaftliche Forschungsmethoden für Fortgeschrittene
+### <strong>Dr. André Calero Valdez</strong><br />Prof. Dr. Martina Ziefle <br /> <br />Human-Computer Interaction Center<br />
+### Wintersemester 19/20
+
+---
+
+
+
+
+
+# Übersicht
+
+1. .gray[Was sind Methoden?] =&gt; [Link](lecture01.html) `\(\checkmark\)`
+2. .gray[Qualitative und Quantitative Daten? Forschungsfrage wählen] =&gt; [Link](lecture02.html) `\(\checkmark\)`
+3. .gray[Wissenschaftstheorie, Empirie und Theorie] =&gt; [Link](lecture03.html) `\(\checkmark\)`
+4. .gray[Forschungsintstrument entwickeln, Messtheorie, Skalenniveaus] =&gt; [Link](lecture04.html) `\(\checkmark\)`
+5. .gray[Deskriptive Statistik, zentrale Tendenz und Streuung] =&gt; [Link](lecture05.html) `\(\checkmark\)`
+6. .gray[Verteilungen, Stichproben und Wahrscheinlichkeit] =&gt; [Link](lecture06.html) `\(\checkmark\)`
+7. .gray[Inferenz, Hypothesen, Fehler 1. und 2. Art, t-Test] =&gt; [Link](lecture07.html) `\(\checkmark\)`
+8. .gray[Alpha-Fehler Kummulierung, ANOVA, MANOVA, Bonferroni] =&gt; [Link](lecture08.html) `\(\checkmark\)`
+9. .gray[Zusammenhänge, Korrelation, lineare Regression] =&gt; [Link](lecture09.html) `\(\checkmark\)`
+10. .gray[Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse] =&gt; [Link](lecture10.html) `\(\checkmark\)`
+11. **Explorative Statistik, parametrische und nicht-parametrische Verfahren** =&gt; [Link](lecture11.html)
+12. Conjoint-Verfahren, Cluster-Analyse =&gt; [Link](lecture12.html)
+13. Effekt-Stärken und Poweranalyse =&gt; [Link](lecture13.html)
+
+---
+# Anwendung Statistik
+
+## Deskriptive Statistik
+
+## Inferenz Statistik
+
+## Explorative Statistik
+
+---
+# Statistik
+
+## Deskriptive Statistik
+- Verfahren zur Beschreibung von Daten
+- Tabellen, Abbildungen
+- Lagemaße, Dispersionsmaße, Verteilungsmaße
+
+--
+
+## Inferenz Statistik
+- Verfahren zur **Prüfung** von Hypothesen (NHST)
+- Unterschiedshypothesen
+  - t-Test, Varianzanalysen
+- Zusammenhangshypothesen
+  - Korrelation, lineare Regression
+- Alpha-Fehler, `\(H_0\)`, `\(p\)`-Wert
+- Vergleich mit Zufallsprozessen
+- Übertragung von Stichprobe auf Grundgesamtheit
+
+---
+# Explorative Statistik
+
+## Ziel: Entdecken von neuen Zusammenhängen oder Unterschieden
+- Messen von vielen Parametern
+- hypothesenfreie Suche nach statistischen Signifikanzen
+- Durchführen von großen Mengen von Testsverfahren
+- Korrelationstabellen, t-Tests, etc.
+- Suchen von Strukturen in Daten: Strukturentdeckende Verfahren
+
+--
+
+## Welche Verfahren sind geeignet?
+- Jedes Inferenzstatistische Verfahren, das viele Eingabeparameter erlaubt.
+- Cluster-Analyse, explorative Faktorenanalyse (PCA oder EFA) 
+- Visualisierungsverfahren
+
+---
+# Korrelationsmatrixplots
+
+
+```
+## corrplot 0.84 loaded
+```
+
+&lt;img src="lecture11_files/figure-html/corrplots-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+---
+# Korrelationsmatrixplots
+
+
+
+
+```r
+d %&gt;% 
+  select(starts_with("robo")) %&gt;% 
+  hcictools::cor.matrix.plot()
+```
+
+&lt;img src="lecture11_files/figure-html/corrplots-3-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Small Multiples
+
+&lt;img src="lecture11_files/figure-html/small-multiples-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+
+---
+# k-Means Clustering
+
+- Methoden zum Aufdecken von ähnlichen Probanden (Typologie)
+- Man wählt die Anzahl an Klassen
+- Algorithmus findet Klassenzugehörigkeit
+
+## Iteratives Verfahren
+- Schritt für Schritt Verbesserung
+  1. Wähle Klassenmittelpunkt
+  2. Wähle Zugehörige Daten/Probanden
+  3. Wähle neuen Klassenmittelpunkt
+
+
+## Visuelle Erklärung des Algorithmus
+[https://www.naftaliharris.com/blog/visualizing-k-means-clustering/](https://www.naftaliharris.com/blog/visualizing-k-means-clustering/)
+
+
+
+---
+class: inverse, center, middle
+
+# .yellow[Parametrische vs. nicht-parametrische Verfahren]
+
+---
+# Parametrische Verfahren
+Bisherige Verfahren basieren auf der Verteilung der Daten
+- t-Test setzt Normalverteilte Daten vorraus
+
+Wir schätzen *Parameter* der Verteilung und vergleichen Daten mit idealen Verteilungen für Hypothesentests.
+- Parameter: Mittelwert, Standardabweichung
+
+## Wofür brauchen Verfahren Parameter?
+
+--
+
+- Nur mit Hilfe von Mittelwert und Standardabweichung, können wir prüfen wie, ob z.B. ein Mitelwertsunterschied groß genug ist, für ein signifikantes Ergebnis. 
+
+
+Vorteil:
+- Einfache Verfahren
+- relativ robust gegen Verletzung der Vorraussetzung
+
+---
+# Nichtparametrische Verfahren
+Nicht immer sind Parameter oder Verteilungen der Daten bekannt.
+- Nicht-parametrische Verfahren setzen diese nicht vorraus.
+
+## Beispiel:
+- t-Test und Mann-Whitney U test
+- Pearson und Spearman rank correlation
+- lineare Regression und ordinale Regression
+- ANOVA und Kruskal-Wallis Test
+
+
+---
+## Wann welcher Test?
+![](figs/statistical-test-flow-chart.jpg)
+---
+# Tools zum Lernen oder Nachschlagen
+
+Wann welche Methode?
+- https://statkat.com (Englisch)
+- https://www.methodenberatung.uzh.ch/de.html Methodenberatung Uni Zürich (SPSS)
+- Andy Field 
+
+Alternative Softwarelösungen zu R
+- SPSS (Nachteil: Kosten, Reproducibility)
+- Jamovi (Nachteil: kein Data Cleaning)
+- JASP (Nachteil: Fokus auf Bayes'sche Statistik)
+- Stata (Nachteil: Kosten)
+- etc..
+---
+# Übersicht
+
+1. .gray[Was sind Methoden?] =&gt; [Link](lecture01.html) `\(\checkmark\)`
+2. .gray[Qualitative und Quantitative Daten? Forschungsfrage wählen] =&gt; [Link](lecture02.html) `\(\checkmark\)`
+3. .gray[Wissenschaftstheorie, Empirie und Theorie] =&gt; [Link](lecture03.html) `\(\checkmark\)`
+4. .gray[Forschungsintstrument entwickeln, Messtheorie, Skalenniveaus] =&gt; [Link](lecture04.html) `\(\checkmark\)`
+5. .gray[Deskriptive Statistik, zentrale Tendenz und Streuung] =&gt; [Link](lecture05.html) `\(\checkmark\)`
+6. .gray[Verteilungen, Stichproben und Wahrscheinlichkeit] =&gt; [Link](lecture06.html) `\(\checkmark\)`
+7. .gray[Inferenz, Hypothesen, Fehler 1. und 2. Art, t-Test] =&gt; [Link](lecture07.html) `\(\checkmark\)`
+8. .gray[Alpha-Fehler Kummulierung, ANOVA, MANOVA, Bonferroni] =&gt; [Link](lecture08.html) `\(\checkmark\)`
+9. .gray[Zusammenhänge, Korrelation, lineare Regression] =&gt; [Link](lecture09.html) `\(\checkmark\)`
+10. .gray[Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse =&gt; [Link](lecture10.html)] `\(\checkmark\)`
+11. Explorative Statistik, parametrische und nicht-parametrische Verfahren =&gt; [Link](lecture11.html) `\(\checkmark\)`
+12. Conjoint-Verfahren, Cluster-Analyse =&gt; [Link](lecture12.html) `\(\checkmark\)`
+13. Effekt-Stärken und Poweranalyse =&gt; [Link](lecture13.html)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

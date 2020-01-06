@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10 - Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Dr. André Calero Valdez Prof. Dr. Martina Ziefle    Human-Computer Interaction Center" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="hcic.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# 10 - Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse
+## Sozialwissenschaftliche Forschungsmethoden für Fortgeschrittene
+### <strong>Dr. André Calero Valdez</strong><br />Prof. Dr. Martina Ziefle <br /> <br />Human-Computer Interaction Center<br />
+### Wintersemester 19/20
+
+---
+
+
+
+
+
+# Übersicht
+
+1. .gray[Was sind Methoden?] =&gt; [Link](lecture01.html) `\(\checkmark\)`
+2. .gray[Qualitative und Quantitative Daten? Forschungsfrage wählen] =&gt; [Link](lecture02.html) `\(\checkmark\)`
+3. .gray[Wissenschaftstheorie, Empirie und Theorie] =&gt; [Link](lecture03.html) `\(\checkmark\)`
+4. .gray[Forschungsintstrument entwickeln, Messtheorie, Skalenniveaus] =&gt; [Link](lecture04.html) `\(\checkmark\)`
+5. .gray[Deskriptive Statistik, zentrale Tendenz und Streuung] =&gt; [Link](lecture05.html) `\(\checkmark\)`
+6. .gray[Verteilungen, Stichproben und Wahrscheinlichkeit] =&gt; [Link](lecture06.html) `\(\checkmark\)`
+7. .gray[Inferenz, Hypothesen, Fehler 1. und 2. Art, t-Test] =&gt; [Link](lecture07.html) `\(\checkmark\)`
+8. .gray[Alpha-Fehler Kummulierung, ANOVA, MANOVA, Bonferroni] =&gt; [Link](lecture08.html)
+9. .gray[Zusammenhänge, Korrelation, lineare Regression] =&gt; [Link](lecture09.html)
+10. **Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse** =&gt; [Link](lecture10.html)
+11. Explorative Statistik, parametrische und nicht-parametrische Verfahren =&gt; [Link](lecture11.html)
+12. Conjoint-Verfahren, Cluster-Analyse =&gt; [Link](lecture12.html)
+13. Effekt-Stärken und Poweranalyse =&gt; [Link](lecture13.html)
+
+---
+# Wiederholung
+## Skalenniveaus, Messniveaus
+
+--
+
+  - Nominal, Ordinal, Intervall
+  - `factor`, `ordered`, `numeric`
+
+--
+
+## Nominal 
+- Test auf Gleichheit
+
+--
+
+## Ordinal
+- Ordnungen
+
+--
+
+## Intervall
+- Abstände und Relationen
+- Für viele Verfahren benötigt (z.B. lineare Regression)
+
+---
+# Forschungsmodell
+## Notation
+Forschungsfrage: Wirkt sich die Schulnote auf die wahrgenommene Polarisierung aus?
+
+![](figs/latent.png)
+
+
+---
+
+# Deskriptive Statistik
+Die deskriptive (beschreibende) Statistik hat zum Ziel, empirische Daten durch Kennzahlen und Tabellen (auch: Maßzahlen oder Parameter) *und* Grafiken übersichtlich darzustellen und zu ordnen. 
+
+## Zentrale Tendenz
+
+--
+- Wo liegt das "Zentrum" der Daten?
+- Mittelwert, Median, Modus
+
+## Dispersion
+
+--
+- Wie streuen die Daten um das "Zentrum"?
+- Varianz, Standardabweichung, AD-Streuung
+
+## Verteilung
+
+--
+- Kurtosis (lepto-, meso-, platykurtisch)
+- Schiefe (links, rechts)
+
+---
+# Übersicht über Verteilungen
+![](figs/distributions.png)
+
+---
+## Null-Hypothesen Signifikanz Test (NHST)
+Jeder Test benötigt:
+- Null-Hypothese `\(H_0\)` - Wie die Welt ohne unsere Erkenntnis sein sollte.
+- Alternativ-Hypothese `\(H_1\)` - Der gefundene Wert in unserer Stichprobe.
+- Freiheitsgrade (df) - Werden aus der Stichprobengröße berechnet.
+
+Jeder Test liefert:
+- eine Teststatistik, z.B. `\(t\)`
+- einen Signifikanz-Wert, `\(p\)`
+
+Wir legen fest:
+- Signifikanz-Niveau `\(\alpha = 0.05\)` - Schwelle, ab der wir die Null-Hypothese verwerfen.
+  - unser p-Wert muss also kleiner sein als 0.05 
+  
+---
+# Fehler 1. Art und Fehler 2. Art
+- `\(\alpha\)`-Fehler: Fehler 1. Art, wird über das Signifikanz-Niveau festgelegt.
+- `\(\beta\)`-Fehler: Fehler 2. Art, wird über die Stichprobengröße festgelegt.
+
+![](figs/fehler.png) 
+
+
+---
+# Testverfahren
+
+## Unterschiedhypothesen
+
+--
+- t-Test für Mittelwertsunterschiede 
+  - simple, independent sample, depdentent sample
+
+--
+- (M)AN(C)OVA - Mittelwertsunterschide mehrere Gruppen
+  - Faktoren und Covariate, univariate und multivariate, one-way und two-way
+
+--
+
+## Zusammenhangshypothesen
+
+--
+- Korrelation für Zusammenhänge
+  - Wertebreich [-1;1]
+  - 3 Varianten (Pearson, Spearman, Kendall)
+  
+
+--
+- Lineare Regression
+  - Prädiktion einer intervall-skalierten Variable
+  - Multiple LR
+
+
+
+
+
+
+
+---
+# Schwierigkeiten für Sozialwissenschaften
+- Womit können wir intervallskalierte Daten messen?
+
+--
+
+## Likert Skalen
+- Entwickelt von Rensis Likert (5-Point Likert Scale) zum Messen von Einstellungen.
+- Einzelne Items werden ordinal gemessen:
+  -z.B.: KUT: 8 Items
+- Dabei sind die Stufen benannt:
+  - 5P: Stimme sehr zu, stimme zu, neutral, stimme nicht zu, stimme gar nicht zu
+  - 6P: Stimme sehr zu, stimme zu, stimme eher zu, stimme eher nicht zu, stimme nicht zu, stimme gar nicht zu
+- Skalenstufen werden ganzzahligen Werten zugeordnet (z.B.: 0-4, 0-5, 1-6, etc.)
+
+---
+# Gerarde oder ungerade?
+## Gerade Likert-Skalen
+- Forced choice
+- Vermeiden von Antworten wird reduziert
+
+## Ungerade Likert-Skalen
+- Möglichkeit keine Meinung abzugeben
+- Möglichkeit neutrale Meinung abzugeben.
+
+
+## "Keine Angabe" als N+1te Option
+
+---
+# Ordinal oder Intervall
+Ob einzele Items Likert-Skalen ordinal oder intervall-skalierte Daten liefert, wird immernoch diskutiert.
+
+## Wo ist der Unterschied?
+
+--
+
+- Willkürliche Wahl der "Labels"
+
+--
+
+- Gleichabständigkeit?
+
+--
+
+- Auswahl der Verfahren 
+  - ordinale vs. lineare Regression
+  - t-Test vs. Wilcoxon signed Rank test
+
+--
+
+## Ab 4 (besser 8) Items intervallskaliert
+- Summative Skala
+- Zentraler Grenzwertsatz
+
+
+
+---
+# Visuelle Analyse von Likert Skalen
+
+
+ 
+
+```r
+lik &lt;- df_lik %&gt;% likert()
+plot(lik, type="bar")
+```
+
+&lt;img src="lecture10_files/figure-html/unnamed-chunk-2-1.png" width="504" style="display: block; margin: auto;" /&gt;
+Gallerie: https://github.com/jbryer/likert
+
+---
+# Numerische Analyse
+
+
+```r
+psych::describe(df_lik)
+```
+
+```
+##                 vars   n mean   sd median trimmed  mad min max range  skew
+## robo_bed*          1 293 4.75 1.30      5    4.93 1.48   1   6     5 -0.99
+## robo_food*         2 293 3.88 1.40      4    3.93 1.48   1   6     5 -0.21
+## robo_med*          3 293 4.10 1.57      4    4.22 1.48   1   6     5 -0.42
+## robo_body*         4 293 3.45 1.50      3    3.44 1.48   1   6     5  0.10
+## robo_hair_wash*    5 293 4.09 1.44      4    4.19 1.48   1   6     5 -0.45
+##                 kurtosis   se
+## robo_bed*           0.23 0.08
+## robo_food*         -0.66 0.08
+## robo_med*          -0.90 0.09
+## robo_body*         -0.96 0.09
+## robo_hair_wash*    -0.67 0.08
+```
+
+---
+class:center, middle
+# Skalenbildung
+ 1.Variablenauswahl (korrelierende Variablen)
+
+ 2.Faktoranalyse (Principal Component Analysis)
+
+ 3.Reliabilitätsanalyse (Cronbach's Alpha) 
+ 
+---
+&lt;style&gt;
+.remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
+                                    font-size: 75%;
+                                  }
+&lt;/style&gt;                              
+# Skalenbildung
+
+- Items die stark korrelieren kommen in Betracht
+
+
+```r
+jmv::corrMatrix(df_part, vars = names(df_lik))
+```
+
+```
+## 
+##  CORRELATION MATRIX
+## 
+##  Correlation Matrix                                                                                    
+##  ───────────────────────────────────────────────────────────────────────────────────────────────────── 
+##                                     robo_bed    robo_food    robo_med    robo_body    robo_hair_wash   
+##  ───────────────────────────────────────────────────────────────────────────────────────────────────── 
+##    robo_bed          Pearson's r           —                                                           
+##                      p-value               —                                                           
+##                                                                                                        
+##    robo_food         Pearson's r       0.556            —                                              
+##                      p-value          &lt; .001            —                                              
+##                                                                                                        
+##    robo_med          Pearson's r       0.502        0.519           —                                  
+##                      p-value          &lt; .001       &lt; .001           —                                  
+##                                                                                                        
+##    robo_body         Pearson's r       0.543        0.691       0.418            —                     
+##                      p-value          &lt; .001       &lt; .001      &lt; .001            —                     
+##                                                                                                        
+##    robo_hair_wash    Pearson's r       0.582        0.682       0.464        0.740                 —   
+##                      p-value          &lt; .001       &lt; .001      &lt; .001       &lt; .001                 —   
+##  ─────────────────────────────────────────────────────────────────────────────────────────────────────
+```
+
+
+---
+# Faktorenanalyse
+Die Faktorenanalyse prüft ob die Varianz mehrere Variablen eine (oder mehrere) gemeinsame Dimensionen beschreiben.
+
+## Beispiel: Big Five Persönlichkeit
+- Ich bin eher zurückhaltend, reserviert. 
+- Ich schenke anderen leicht Vertrauen, glaube an das Gute im Menschen. 
+- Ich bin bequem, neige zur Faulheit. 
+- Ich bin entspannt, lasse mich durch Stress nicht aus der Ruhe bringen. 
+- Ich habe nur wenig künstlerisches Interesse. 
+- Ich gehe aus mir heraus, bin gesellig. 
+- Ich neige dazu, andere zu kritisieren. 
+- Ich erledige Aufgaben gründlich. 
+- Ich werde leicht nervös und unsicher. 
+- Ich habe eine aktive Vorstellungskraft, bin fantasievoll.
+
+
+---
+# Faktorenanalyse
+Die Faktorenanalyse prüft ob die Varianz mehrere Variablen eine (oder mehrere) gemeinsame Dimensionen beschreiben.
+
+## Beispiel: Big Five Persönlichkeit
+- Ich bin eher zurückhaltend, reserviert. (Extraversion)
+- Ich schenke anderen leicht Vertrauen, glaube an das Gute im Menschen. (Verträglichkeit)
+- Ich bin bequem, neige zur Faulheit. (Gewissenhaftigkeit)
+- Ich bin entspannt, lasse mich durch Stress nicht aus der Ruhe bringen. (Neurotizismus)
+- Ich habe nur wenig künstlerisches Interesse. (Offenheit)
+- Ich gehe aus mir heraus, bin gesellig. (Extraversion)
+- Ich neige dazu, andere zu kritisieren. (Verträglichkeit)
+- Ich erledige Aufgaben gründlich. (Gewissenhaftigkeit)
+- Ich werde leicht nervös und unsicher. (Neurotizismus)
+- Ich habe eine aktive Vorstellungskraft, bin fantasievoll. (Offenheit)
+---
+# Faktorenanalyse
+- Exploratives, strukturentdeckendes Verfahren
+
+Erstmal 2-Dimensionaler Fall:
+- Multivariate Daten, die korrelieren
+
+
+```r
+psych::bfi %&gt;% ggplot() + aes(C1, C2) + geom_jitter() + geom_smooth(method = "lm") + labs(caption="Jitter-Plot 10%")
+```
+
+&lt;img src="lecture10_files/figure-html/unnamed-chunk-5-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+---
+# Faktoren-Analyse
+## Was passiert da eigentlich?
+Rotation der Hauptachsen zur Reduktion der Streuung in der Nebenachse
+![](figs/dimrotation.gif)
+---
+# Faktorenanalyse durchführen
+
+
+```r
+jmv::pca(df_part, vars = names(df_part), 
+         screePlot = TRUE, 
+         eigen = TRUE, 
+         kmo = TRUE, 
+         bartlett = TRUE, 
+         factorCor = TRUE) 
+```
+
+---
+# Faktorenanalyse durchführen
+## Vorraussetzungen prüfen
+- Bartlett's Test muss signifikant werden
+- KMO MSA &gt; 0.8
+
+```
+## 
+##  ASSUMPTION CHECKS
+## 
+##  Bartlett's Test of Sphericity 
+##  ───────────────────────────── 
+##    χ²     df    p        
+##  ───────────────────────────── 
+##    721    10    &lt; .001   
+##  ───────────────────────────── 
+## 
+## 
+##  KMO Measure of Sampling Adequacy 
+##  ──────────────────────────────── 
+##                      MSA     
+##  ──────────────────────────────── 
+##    Overall           0.847   
+##    robo_bed          0.893   
+##    robo_food         0.857   
+##    robo_med          0.871   
+##    robo_body         0.813   
+##    robo_hair_wash    0.827   
+##  ────────────────────────────────
+```
+
+---
+# Faktorenanalyse durchführen
+## Eigenwerte
+- Aufgeklärte Varianz pro Faktor (Komponente)
+- Hinweis auf Anzahl Faktoren
+
+```
+## 
+##  EIGENVALUES
+## 
+##  Initial Eigenvalues                                          
+##  ──────────────────────────────────────────────────────────── 
+##    Component    Eigenvalue    % of Variance    Cumulative %   
+##  ──────────────────────────────────────────────────────────── 
+##    1                 3.296            65.92            65.9   
+##    2                 0.662            13.25            79.2   
+##    3                 0.471             9.41            88.6   
+##    4                 0.316             6.33            94.9   
+##    5                 0.254             5.09           100.0   
+##  ────────────────────────────────────────────────────────────
+```
+---
+# Faktorenanalyse durchführen
+## Korrelationen der Faktoren
+- Stark korrelierende Faktoren können problematisch sein
+- Hängt von der Rotation ab: Varimax
+
+```
+## 
+##  COMPONENT STATISTICS
+## 
+##  Correlation Matrix 
+##  ────────────────── 
+##         1   
+##  ────────────────── 
+##    1    —   
+##  ──────────────────
+```
+
+---
+# Faktorenanalyse durchführen
+## Ladungen der Items auf Faktoren
+- Ladungen sollten groß sein (&gt;0.8)
+- Uniqenuess zeigt an, welcher Varianzanteil im Faktor verloren geht.
+
+```
+## 
+##  Component Loadings                        
+##  ───────────────────────────────────────── 
+##                      1        Uniqueness   
+##  ───────────────────────────────────────── 
+##    robo_bed          0.780         0.392   
+##    robo_food         0.858         0.263   
+##    robo_med          0.694         0.519   
+##    robo_body         0.848         0.281   
+##    robo_hair_wash    0.866         0.250   
+##  ───────────────────────────────────────── 
+##    Note. 'varimax' rotation was used
+```
+
+---
+# Faktorenanalyse durchführen
+## Screeplot
+- Wo unterschreiten die Eigenwerte die simulierten Daten
+&lt;img src="lecture10_files/figure-html/unnamed-chunk-11-1.png" width="504" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+class: center, middle
+# Faktoren identifiziert!
+Nächster Schritt: summative Skala bilden!
+
+Items weglassen?
+
+---
+# Reliabilitätsanalyse
+
+- Prüft, ob die Skala in sich reliabel misst (interne Reliabilität). 
+- Passen die Items "zusammen".
+
+- Gemessen wird "Cronbach's alpha".
+
+## Schwellwerte Cronbach's alpha
+ Internal consistency
+- 0.9 ≤ α	Excellent
+- 0.8 ≤ α &lt; 0.9	Good
+- 0.7 ≤ α &lt; 0.8	Acceptable
+- 0.6 ≤ α &lt; 0.7	Questionable
+- 0.5 ≤ α &lt; 0.6	Poor
+- α &lt; 0.5	Unacceptable
+
+---
+# Reliabilität in R
+
+```r
+psych::alpha(df_part)
+```
+
+```
+## 
+## Reliability analysis   
+## Call: psych::alpha(x = df_part)
+## 
+##   raw_alpha std.alpha G6(smc) average_r S/N   ase mean  sd median_r
+##       0.87      0.87    0.85      0.57 6.6 0.012  4.1 1.2     0.55
+## 
+##  lower alpha upper     95% confidence boundaries
+## 0.84 0.87 0.89 
+## 
+##  Reliability if an item is dropped:
+##                raw_alpha std.alpha G6(smc) average_r S/N alpha se  var.r med.r
+## robo_bed            0.85      0.85    0.83      0.59 5.7    0.014 0.0184  0.60
+## robo_food           0.82      0.83    0.80      0.54 4.7    0.016 0.0128  0.52
+## robo_med            0.87      0.87    0.84      0.63 6.9    0.011 0.0068  0.63
+## robo_body           0.83      0.83    0.80      0.55 4.9    0.016 0.0058  0.54
+## robo_hair_wash      0.82      0.82    0.79      0.54 4.7    0.017 0.0080  0.53
+## 
+##  Item statistics 
+##                  n raw.r std.r r.cor r.drop mean  sd
+## robo_bed       293  0.77  0.79  0.70   0.66  4.7 1.3
+## robo_food      293  0.85  0.85  0.81   0.76  3.9 1.4
+## robo_med       293  0.73  0.72  0.60   0.56  4.1 1.6
+## robo_body      293  0.84  0.84  0.80   0.73  3.5 1.5
+## robo_hair_wash 293  0.86  0.86  0.83   0.76  4.1 1.4
+## 
+## Non missing response frequency for each item
+##                   1    2    3    4    5    6 miss
+## robo_bed       0.02 0.06 0.10 0.16 0.32 0.35  0.1
+## robo_food      0.06 0.10 0.23 0.28 0.18 0.15  0.1
+## robo_med       0.08 0.09 0.20 0.17 0.23 0.24  0.1
+## robo_body      0.11 0.18 0.25 0.19 0.16 0.11  0.1
+## robo_hair_wash 0.06 0.09 0.18 0.22 0.26 0.18  0.1
+```
+
+
+---
+# Zusammenfassung
+
+## Likert-Skalen
+- Vor- und Nachteile
+- Ordinal oder Intervall
+
+## Faktoranalyse
+- Korrelationsanalyse
+- Principal-Component-Analysis (PCA)
+  - Vorraussetzungen: KMO und Bartlett
+  - ggfs. Korrelation
+  - Eigenwerte
+  - Ladungen
+
+## Reliabilitätsanalyse
+
+
+
+
+---
+
+# Übersicht
+
+1. .gray[Was sind Methoden?] =&gt; [Link](lecture01.html) `\(\checkmark\)`
+2. .gray[Qualitative und Quantitative Daten? Forschungsfrage wählen] =&gt; [Link](lecture02.html) `\(\checkmark\)`
+3. .gray[Wissenschaftstheorie, Empirie und Theorie] =&gt; [Link](lecture03.html) `\(\checkmark\)`
+4. .gray[Forschungsintstrument entwickeln, Messtheorie, Skalenniveaus] =&gt; [Link](lecture04.html) `\(\checkmark\)`
+5. .gray[Deskriptive Statistik, zentrale Tendenz und Streuung] =&gt; [Link](lecture05.html) `\(\checkmark\)`
+6. .gray[Verteilungen, Stichproben und Wahrscheinlichkeit] =&gt; [Link](lecture06.html) `\(\checkmark\)`
+7. .gray[Inferenz, Hypothesen, Fehler 1. und 2. Art, t-Test] =&gt; [Link](lecture07.html) `\(\checkmark\)`
+8. .gray[Alpha-Fehler Kummulierung, ANOVA, MANOVA, Bonferroni] =&gt; [Link](lecture08.html) `\(\checkmark\)`
+9. .gray[Zusammenhänge, Korrelation, lineare Regression] =&gt; [Link](lecture09.html) `\(\checkmark\)`
+10. Skalen, Likert-Skalen, Reliabilität und Faktoren-Analyse =&gt; [Link](lecture10.html) `\(\checkmark\)`
+11. Explorative Statistik, parametrische und nicht-parametrische Verfahren =&gt; [Link](lecture11.html)
+12. Conjoint-Verfahren, Cluster-Analyse =&gt; [Link](lecture12.html)
+13. Effekt-Stärken und Poweranalyse =&gt; [Link](lecture13.html)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

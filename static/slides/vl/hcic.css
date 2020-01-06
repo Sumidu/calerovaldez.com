@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+
+/* Generic stuff */
+
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+body { font-family: 'Open Sans' }
+
+.img-75 {
+  text-align: center;
+  width: 500px !important;
+  height: 320px !important;
+}
+
+.img-50 {
+  text-align: center;
+  width: 400px !important;
+  height: 220px !important;
+}
+
+
+.grViz {
+  margin-left:auto; margin-right:auto; display:block;
+}
+
+/* Pretty sure this is all me messing with the title slide */
+
+
+div.remark-slide-container h1 {
+	font-family: 'Open Sans', sans-serif;
+	color: #00549F;
+	letter-spacing: -1px;
+  font-size: 42px;
+  line-height: 1.1em;
+  font-weight: bold;
+}
+
+.inverse h1 {
+    color: #E8F1FA;
+    line-height: 0.5em;
+    font-weight: normal;
+}
+
+.title-slide h1 {
+
+	margin-top: -130px;
+}
+
+div.remark-slide-container h2 {
+	font-family: 'Open Sans', sans-serif;
+	color: #407FB7;
+	letter-spacing: -1px;
+	font-weight: normal;
+	font-size: 26px
+}
+
+div.remark-slide-container h3 {
+	font-family: 'Open Sans', sans-serif;
+	color: #000;
+	letter-spacing: -1px;
+	font-size: 22px;
+	font-weight: normal;
+	padding-top: 10px
+}
+
+.title-slide {
+	background-color: #fff;
+  background-image: url('figs/hcic.png');
+	background-position: center bottom 100px;
+	background-size: 50%;
+	border-bottom: 0px solid  #00549F;
+	box-shadow:  0 55px 0 #fff;
+}
+
+
+
+
+.title-slide .remark-slide-number {
+  display: none;
+}
+
+/* Hmm. How about the slide number. */
+
+
+.remark-slide-number {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	color: #522D80;
+}
+
+/* Okay, now let's add a simple bottom border */
+
+
+div.remark-slide {
+  border-bottom: 3px solid  #00549F;
+  box-shadow:  0 5px 0 #F66733;
+
+}
+
+/* Let's play with .inverse and a new class, .fullscale, a little more */
+
+.inverse {
+    color: #fafafa;
+    text-shadow: 0 0 0px #333;
+}
+
+div.remark-slide-container .fullscale {
+    color: #d6d6d6;
+    text-shadow: 0 0 20px #333;
+}
+
+div.remark-slide-container .fullscale h1 {
+	color: #fff;
+
+}
+
+div.remark-slide-container .fullscale p {
+	color: #000;
+
+}
+.remark-slide-content {
+	font-size: 20px;
+	text-shadow: 0 0 0px #333;
+
+}
+
+.footnote {
+  font-size: 14px;
+  
+}
+
+/* RWTH Link Color und Figure Caption sizes*/
+
+a {
+  color: #E30066;
+}
+
+.figurecaption {
+  display: block;
+   font-size: 14px;
+   line-height: 1.15em;
+   text-align: center;
+}
+
+
+.red {
+  color: #cc071e;
+}
+
+.orange {
+  color: #F6A800;
+}
+
+.yellow {
+  color: #FFED00;
+}
+
+.gray {
+  color: #CFD1D2;
+}

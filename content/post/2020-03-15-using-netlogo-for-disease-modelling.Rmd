@@ -1,8 +1,8 @@
 ---
-title: Using Netlogo for Disease Modelling
+title: Using Netlogo for Disease Modeling
 author: admin
-date: '2020-01-04'
-slug: using-netlogo-for-disease-modelling
+date: '2020-03-15'
+slug: using-netlogo-for-disease-modeling
 categories: []
 tags:
   - agent-based modelling

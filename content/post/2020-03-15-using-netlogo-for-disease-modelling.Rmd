@@ -1,0 +1,56 @@
+---
+title: Using Netlogo for Disease Modelling
+author: admin
+date: '2020-01-04'
+slug: using-netlogo-for-disease-modelling
+categories: []
+tags:
+  - agent-based modelling
+  - netlogo
+  - youtube
+  - covid19
+subtitle: ''
+summary: ''
+math: true
+
+authors: []
+lastmod: '2020-04-15T02:05:01+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#knitr::opts_chunk$set(include = FALSE)
+library(tidyverse)
+library(knitr)
+library(glue)
+library(emo)
+set.seed(1)
+```
+
+
+## Overview
+Since the term "Simulation" or modeling was used frequently in the media recently to get an understanding of the spread of covid-19, I have created an instructive agent-based model for the simulation of disease spread and limited hospital capacities. Since this model is only "instructive" for the purpose of understanding modeling, I have also created a video to explain the model and some implications due to the simplicity of the design.
+
+Please watch the video first, before playing around with the simulation:
+English Version
+```{r echo=FALSE}
+blogdown::shortcode("youtube", "BSJ6r715gSk")
+```
+
+German Version
+```{r echo=FALSE}
+blogdown::shortcode("youtube", "2pqIvgrDcTA")
+```
+
+You can test the Simulation yourself here: http://bit.ly/NLinfection
+
+
+If you are interested in seeing the current case numbers in comparison to other countries, have a look at this shiny application that I made:
+https://andrecalerovaldez.shinyapps.io/CovidTimeSeries/
+
+

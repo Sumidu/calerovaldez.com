@@ -1,7 +1,7 @@
 ---
 title: Masken für alle? Die Wissenschaft sagt ja.
 author: admin
-date: '2020-04-18'
+date: '2020-04-14'
 slug: masks-for-everyone
 categories: []
 tags:
@@ -11,7 +11,7 @@ summary: ''
 math: true
 
 authors: []
-lastmod: '2020-04-18T02:05:01+01:00'
+lastmod: '2020-04-14T02:05:01+01:00'
 featured: no
 image:
   caption: ''
@@ -129,7 +129,7 @@ Rojas Castro, Daniela, Rosemary M Delabre, and Jean-Michel Molina. 2019. “Give
 
 To, Kelvin Kai-Wang, Owen Tak-Yin Tsang, Wai-Shing Leung, Anthony Raymond Tam, Tak-Chiu Wu, David Christopher Lung, Cyril Chik-Yan Yip, et al. 2020. “Temporal profiles of viral load in posterior oropharyngeal saliva samples and serum antibody responses during infection by SARS-CoV-2: an observational cohort study.” Lancet Infect. Dis. 0 (0). https://doi.org/10.1016/S1473-3099(20)30196-1.
 
-Wei, Wycliffe E. 2020. “Presymptomatic Transmission of SARS-CoV-2 â€” Singapore, January 23â€“March 16, 2020.” MMWR. Morbidity and Mortality Weekly Report 69. https://doi.org/10.15585/mmwr.mm6914e1.
+Wei, Wycliffe E. 2020. “Presymptomatic Transmission of SARS-CoV-2” Singapore, January 23 “March 16, 2020.” MMWR. Morbidity and Mortality Weekly Report 69. https://doi.org/10.15585/mmwr.mm6914e1.
 
 Wells, WF. 1934. “On Air-Borne Infection: Study Ii. Droplets and Droplet Nuclei.” American Journal of Epidemiology 20 (3): 611–18.
 

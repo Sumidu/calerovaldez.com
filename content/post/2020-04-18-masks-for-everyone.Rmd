@@ -1,0 +1,144 @@
+---
+title: Masken für alle? Die Wissenschaft sagt ja.
+author: admin
+date: '2020-04-18'
+slug: masks-for-everyone
+categories: []
+tags:
+  - covid19
+subtitle: 'by Professor Trisha Greenhalgh OBE and Jeremy Howard'
+summary: ''
+math: true
+
+authors: []
+lastmod: '2020-04-18T02:05:01+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+#knitr::opts_chunk$set(include = FALSE)
+library(tidyverse)
+library(knitr)
+library(glue)
+library(emo)
+set.seed(1)
+```
+
+
+# Masken für alle? Die Wissenschaft sagt ja.
+> Verfasst am 13. Apr 2020 von Professor Trisha Greenhalgh OBE und Jeremy Howard.
+> Übersetzt: André Calero Valdez (+ DeepL).
+
+Soll man nun Masken tragen oder nicht? Sicher, es ist kompliziert. Aber nicht so kompliziert, wie manche Leute unterstellen. Wir haben uns die Forschung angeschaut (siehe unsere Veröffentlichungen "Face Masks Against COVID-19: An Evidence Review" - mit 84 Referenzen! - und "Face masks for the public during the covid-19 crisis"). Hier ist eine Zusammenfassung der verschiedenen Evidenzströme und unsere Einschätzung, was das alles bedeutet.
+
+
+## Die Epidemiologie der Krankheitsverbreitung
+Sie haben wahrscheinlich schon die Videos von dicht gedrängten Dominosteinen und Mausefallen gesehen, wo ein einzelner Gegenstand eine riesige Kettenreaktion auslöst. Je näher die Dominosteine (oder Mausefallen) beieinander liegen, desto mehr Chaos entsteht. Jede ansteckende Krankheit hat eine Übertragungsrate (R0). Eine Krankheit mit einer R0 von 1,0 bedeutet, dass jede infizierte Person im Durchschnitt eine andere Person ansteckt. Eine Krankheit, deren R0 kleiner als 1,0 ist, wird aussterben. Der Grippestamm, der die Pandemie von 1918 verursachte, hatte einen R0 von 1,8. Der R0 des Virus, der COVID-19 verursacht, wurde von Forschern des Imperial College auf 2,4 geschätzt, obwohl einige Untersuchungen darauf hindeuten, dass er bis zu 5,7 betragen könnte. Das bedeutet, dass sich COVID-19 ohne Eindämmungsmaßnahmen weit und schnell ausbreiten wird. Wichtig ist, dass COVID-19-Patienten in der Frühphase der Krankheit am ansteckendsten sind (To et al. 2020; Zou et al. 2020; Bai et al. 2020; Zhang et al. 2020; Zhang et al. 2020; Doremalen et al. 2020; Wei 2020), in der sie in der Regel wenige oder keine Symptome haben.
+
+
+## Die Physik der Tröpfchen und Aerosole
+Wenn Sie sprechen, werden winzige Mikrotröpfchen aus Ihrem Mund ausgestoßen. Wenn Sie infektiös sind, enthalten diese Viruspartikel. Nur die allergrößten Tröpfchen überleben am Ende mehr als 0,1 Sekunde, bevor sie austrocknen und sich in Tröpfchenkerne verwandeln (Wells 1934; Duguid 1946; Morawska et al. 2009), die 3-5 Mal kleiner sind als das ursprüngliche Tröpfchen selbst, aber immer noch etwas Virus enthalten.
+
+Das bedeutet, dass es viel einfacher ist, Tröpfchen zu blockieren, sobald sie aus dem Mund kommen, wenn sie viel größer sind, als sie zu blockieren, wenn sie sich dem Gesicht einer nicht infizierten Person nähern, die diese Tröpfchen aufnimmt. Aber das ist nicht das, was die meisten Forscher untersucht haben...
+
+
+## Die Materialwissenschaft der Masken
+
+In den Debatten über die Wirksamkeit von Masken wird oft davon ausgegangen, dass der Zweck der Maske darin besteht, den Träger zu schützen, denn das ist es, was alle Ärzte im Medizinstudium lernen. Tuchmasken sind dabei relativ schlecht (wenn auch nicht ganz unwirksam). Für einen 100%igen Schutz benötigt der Träger ein richtig angepasstes medizinisches Atemschutzgerät (wie z.B. ein N95 Maske oder eine FFP3-Maske). Aber Stoffmasken, die von einer infizierten Person getragen werden, schützen die Menschen um sie herum sehr wirksam. Dies wird als "Quellenkontrolle" bezeichnet. Und es ist die Quellenkontrolle, die in der Debatte darüber, ob die Öffentlichkeit Masken tragen sollte, eine Rolle spielt.
+
+Wenn Sie COVID-19 haben und jemanden aus 20 cm Entfernung anhusten, reduziert das Tragen einer Baumwollmaske die Virusmenge, die Sie auf diese Person übertragen, um das [36fache](https://annals.org/aim/fullarticle/2764367/effectiveness-surgical-cotton-masks-blocking-sars-cov-2-controlled-comparison) und ist sogar noch wirksamer als eine chirurgische Maske. Seltsamerweise hielten die Forscher, die diese Tatsache entdeckten, eine 36-fache Reduktion für "unwirksam". Wir sind anderer Meinung. Das bedeutet, dass Sie nur 1/36-mal so viel Virus übertragen, wie Sie es sonst getan hätten, wodurch die Viruslast verringert wird, was wahrscheinlich zu einer geringeren Infektionswahrscheinlichkeit und weniger Symptomen führt, wenn Sie infiziert werden.
+
+## Die Mathematik der Ansteckung
+Die mathematische Modellierung unseres Teams, unterstützt durch andere Forschungsarbeiten (Yan et al. 2019), legt nahe, dass, wenn die meisten Menschen in der Öffentlichkeit eine Maske tragen, die Übertragungsrate ("effektiver R-Wert") unter 1,0 sinken kann, wodurch die Ausbreitung der Krankheit vollständig gestoppt wird. Die Maske muss nicht jedes einzelne Viruspartikel blockieren, aber je mehr Partikel sie blockiert, desto niedriger ist die effektive R.
+
+![Modellierte Auswirkungen der Verwendung von Masken auf die Reproduktionsrate](https://www.fast.ai/images/2020-04-12-masks-summary/image1.png)
+
+Wie wirksam das Tragen von Masken ist, hängt von drei Dingen ab, die in der Grafik dargestellt sind: wie gut die Maske das Virus blockiert ("Wirksamkeit" - Efficacy: horizontale Achse), welcher Anteil der Bevölkerung Masken trägt ("Adhärenz" - Adherence: vertikale Achse) und die Übertragungsrate der Krankheit (R0: die schwarzen Linien in der Grafik). Der blaue Bereich des Diagramms zeigt einen R0 unter 1,0 an, was wir erreichen müssen, um die Krankheit auszulöschen. Wenn die Maske 100% der Partikel blockiert (ganz rechts in der Grafik), führen selbst geringe Adhärenzraten zur Eindämmung der Krankheit. Selbst wenn die Maske einen viel geringeren Anteil an Viruspartikeln blockiert, könnte die Krankheit dennoch eingedämmt werden - aber nur, wenn die meisten oder alle Menschen Masken tragen.
+
+## Die Politikwissenschaft des Maskentragens
+
+Wie bringt man alle oder die meisten Menschen dazu, Masken zu tragen? Nun, man kann sie aufklären und versuchen, sie zu überzeugen, aber ein effektiverer Ansatz ist es, von ihnen zu verlangen, dass sie eine Maske tragen, entweder in bestimmten Umgebungen wie öffentlichen Verkehrsmitteln oder Lebensmittelgeschäften oder sogar jederzeit außerhalb des Hauses. Forschungsarbeiten zum Thema Impfung (Bradford und Mandich 2015) zeigen, dass Rechtsordnungen, die eine höhere Messlatte für Impfausnahmen setzen, höhere Impfraten aufweisen. Der gleiche Ansatz wird jetzt auch zur Erhöhung der Maskentragepflicht angewandt, und erste Ergebnisse (Leffler et al. 2020) deuten darauf hin, dass diese Gesetze wirksam dazu beitragen, die Einhaltung der Vorschriften zu erhöhen und die Ausbreitung von COVID-19 zu verlangsamen oder zu stoppen.
+
+
+## Experimente zum Tragen von Masken: künstlich und natürlich
+Ein künstliches Experiment liegt vor, wenn ein Forscher Menschen (in der Regel nach dem Zufallsprinzip - daher der Begriff "randomisierte kontrollierte Studie" - randomized controlled trial oder RCT) entweder eine Maske tragen oder keine Maske tragen (die Kontrollgruppe). In COVID-19 gab es keine RCTs zum Maskentragen in der Öffentlichkeit. RCTs zum Maskentragen zur Vorbeugung anderer Krankheiten (wie Grippe oder Tuberkulose) zeigten tendenziell einen kleinen Effekt, der in vielen Studien statistisch nicht signifikant war. In den meisten dieser Studien trugen die der Personen der Gruppe "Maskentragen" nicht immer ihre Masken.
+
+Ein natürliches Experiment ist, wenn wir etwas untersuchen, das wirklich passiert - zum Beispiel wenn ein Land eine Politik des Maskentragens einführt. In Südkorea zum Beispiel gab es eine rasche Ausbreitung in der Gemeinschaft ähnlich wie in den ersten Wochen in Italien. Dann, Ende Februar 2020, stellte die Regierung jedem Bürger regelmäßig Masken zur Verfügung. Von diesem Zeitpunkt an änderte sich alles. Als die Zahl der Todesopfer in Italien auf ein entsetzliches Ausmaß anstieg, nahm die Zahl der Todesopfer in Südkorea sogar ab. Hier ist die Zahl der aktiven Fälle in Südkorea (rot) und in Italien (blau); sehen Sie sich genau an, was Anfang März geschah, als die Auswirkungen der Maskenverteilung einsetzten (diese südkoreanische Analyse ist [Hyokon Zhiang](https://twitter.com/slowblogger) und der Visualisierung von Reshama Shaik zu verdanken):
+
+![Vergleich der COVID-19-Fälle zwischen Korea und Italien](https://www.fast.ai/images/2020-04-12-masks-summary/image2.png)
+
+Natürliche Experimente sind wissenschaftlich unvollkommen, weil es keine direkte Kontrollgruppe gibt, so dass wir nicht sicher sein können, dass irgendeine Veränderung auf die Masken zurückzuführen ist. In einigen Ländern, die das Maskentragen einführten, fanden andere Maßnahmen wie striktes "Social Distancing", Schulschließungen und die Absage von öffentlichen Veranstaltungen etwa zur gleichen Zeit statt. Selbst in diesen Fällen können wir relevante Vergleiche finden. Beispielsweise führten die europäischen Nachbarn Österreich und Tschechien zum gleichen Zeitpunkt Vorschriften zum "Social Distancing" ein, aber auch Tschechien führte das obligatorische Tragen von Masken ein. Die Fallzahlen in Österreich setzten ihren Aufwärtstrend fort, während sie sich in Tschechien abflachten. Erst als Österreich Wochen später ebenfalls Maskengesetze einführte, gingen die beiden Länder wieder auf ähnliche Bahnen.
+
+![Vergleich der COVID-19-Fälle zwischen Tschechien und Österreich](https://www.fast.ai/images/2020-04-12-masks-summary/image3.png)
+
+Wichtig ist, dass in jedem Land und in jedem Zeitraum, in dem die Verwendung von Masken durch Gesetze gefördert wurde oder in dem den Bürgern Masken zur Verfügung gestellt wurden, die Fall- und Todesraten gesunken sind.
+
+## Die Verhaltenswissenschaft des Maskentragens
+Einige haben behauptet, dass es riskantes Verhalten (Brosseau et al. 2020) fördert (z.B. mehr ausgehen, weniger Hände waschen), wenn man Menschen dazu bringt (oder stark dazu ermutigt), Masken zu tragen. Dies führe zu einem negativen Nettoergebnis, und dieser Effekt wurde in einigen experimentellen Versuchen mit Masken beobachtet. Ähnliche Argumente wurden bereits früher für HIV-Präventionsstrategien (Cassell et al. 2006; Rojas Castro, Delabre und Molina 2019) und Motorradhelmgesetzen (Ouellet 2011) angeführt. Praktische Untersuchungen zu diesen Themen ergaben jedoch, dass, obwohl einige Personen mit riskantem Verhalten reagierten, auf Bevölkerungsebene insgesamt eine Verbesserung der Sicherheit und des Wohlbefindens zu verzeichnen war (Peng et al. 2017; Houston und Richardson 2007).
+
+## Die Ökonomie des Maskentragens
+Ökonomische Analysen berücksichtigen, wie viel es kostet, Masken zur Verfügung zu stellen im Vergleich zu dem Wert den sie stiften (sowohl finanzieller als auch nicht-finanzieller Art). Solche ökonomischen Studien (Abaluck et al. 2020) weisen darauf hin, dass jede von einer Person getragene Maske (die fast nichts kostet) einen wirtschaftlichen Nutzen von Tausenden von Dollar erzeugen und viele Leben retten könnte.
+
+## Die Anthropologie des Maskentragens
+Das Tragen von Masken durch die Öffentlichkeit hat sich in vielen asiatischen Ländern normalisiert, teils aus individuellen Gründen (zum Schutz vor Umweltverschmutzung), teils aus kollektiven Gründen (als Folge der jüngsten MERS- und SARS-Epidemien). "Meine Maske schützt Dich, Deine schützt mich." In den meisten dieser Länder war es jedoch die Norm, nur dann eine Maske zu tragen, wenn Sie Symptome haben; erst in den letzten Wochen, seit das Bewusstsein für die asymptomatische Ausbreitung besser verstanden wird, ist es üblich geworden, die Maske unabhängig von den Symptomen zu tragen.
+
+## Schlussfolgerung
+Zwar sprechen nicht alle wissenschaftlichen Erkenntnisse für das Tragen von Masken, aber die meisten weisen in die gleiche Richtung. Unsere Bewertung dieser Beweise führt uns zu einer klaren Schlussfolgerung: Behalten Sie Ihre Tröpfchen für sich - tragen Sie eine Maske.
+
+Sie können sich [zu Hause eine Maske](https://masks4all.co/) anfertigen, aus einem T-Shirt, Taschentuch oder Papiertuch, oder Sie können sich auch einfach einen Schal oder ein Kopftuch um Ihr Gesicht wickeln. Idealerweise verwenden Sie dicht gewebten Stoff, durch den Sie noch atmen können. Forscher empfehlen, eine Lage Papierhandtuch als Einwegfilter beizufügen; Sie können es einfach zwischen zwei Stofflagen schieben. Es gibt keine Anhaltspunkte dafür, dass Ihre Maske mit besonderer Sachkenntnis oder Sorgfalt hergestellt werden muss, um eine wirksame Quellenkontrolle zu gewährleisten. Sie können eine Stoffmaske waschen und wiederverwenden, genauso wie Sie ein T-Shirt wiederverwenden.
+
+Wenn sich herausstellt, dass Sie an COVID-19 erkranken, werden die Menschen, die Ihnen wichtig sind, froh sein, dass Sie eine Maske tragen.
+
+
+
+### Epilog: Jeremys Illustration der Quellenkontrolle
+Hier ist eine kleine Illustration der Quellenkontrolle von Jeremy!
+
+```{r echo=FALSE}
+blogdown::shortcode("youtube", "F0RcH9DfuyE")
+```
+
+
+## Referenzen
+Abaluck, Jason, Judith A. Chevalier, Nicholas A. Christakis, Howard Paul Forman, Edward H. Kaplan, Albert Ko, and Sten H. Vermund. 2020. “The Case for Universal Cloth Mask Adoption and Policies to Increase Supply of Medical Masks for Health Workers.” SSRN Scholarly Paper ID 3567438. Rochester, NY: Social Science Research Network. https://papers.ssrn.com/abstract=3567438.
+
+Bai, Yan, Lingsheng Yao, Tao Wei, Fei Tian, Dong-Yan Jin, Lijuan Chen, and Meiyun Wang. 2020. “Presumed Asymptomatic Carrier Transmission of Covid-19.” Jama.
+Bradford, W David, and Anne Mandich. 2015. “Some State Vaccination Laws Contribute to Greater Exemption Rates and Disease Outbreaks in the United States.” Health Affairs 34 (8): 1383–90.
+
+Brosseau, Lisa M., ScD, Margaret Sietsema, PhD Apr 01, and 2020. 2020. “COMMENTARY: Masks-for-All for COVID-19 Not Based on Sound Data.” CIDRAP. https://www.cidrap.umn.edu/news-perspective/2020/04/commentary-masks-all-covid-19-not-based-sound-data.
+
+Cassell, Michael M, Daniel T Halperin, James D Shelton, and David Stanton. 2006. “Risk Compensation: The Achilles’ Heel of Innovations in Hiv Prevention?” Bmj 332 (7541): 605–7.
+
+Doremalen, Neeltje van, Trenton Bushmaker, Dylan H. Morris, Myndi G. Holbrook, Amandine Gamble, Brandi N. Williamson, Azaibi Tamin, et al. 2020. “Aerosol and Surface Stability of SARS-CoV-2 as Compared with SARS-CoV-1.” New England Journal of Medicine 0 (0): null. https://doi.org/10.1056/NEJMc2004973.
+
+Duguid, JP. 1946. “The Size and the Duration of Air-Carriage of Respiratory Droplets and Droplet-Nuclei.” Epidemiology & Infection 44 (6): 471–79.
+Houston, David J, and Lilliard E Richardson. 2007. “Risk Compensation or Risk Reduction? Seatbelts, State Laws, and Traffic Fatalities.” Social Science Quarterly 88 (4): 913–36.
+
+Leffler, Christopher, Edsel Ing, Craig A. McKeown, Dennis Pratt, and Andrzej Grzybowski. 2020. “Country-Wide Mortality from the Novel Coronavirus (COVID-19) Pandemic and Notes Regarding Mask Usage by the Public.”
+
+Morawska, LJGR, GR Johnson, ZD Ristovski, Megan Hargreaves, K Mengersen, Steve Corbett, Christopher Yu Hang Chao, Yuguo Li, and David Katoshevski. 2009. “Size Distribution and Sites of Origin of Droplets Expelled from the Human Respiratory Tract During Expiratory Activities.” Journal of Aerosol Science 40 (3): 256–69.
+
+Ouellet, James V. 2011. “Helmet Use and Risk Compensation in Motorcycle Accidents.” Traffic Injury Prevention 12 (1): 71–81.
+
+Peng, Yinan, Namita Vaidya, Ramona Finnie, Jeffrey Reynolds, Cristian Dumitru, Gibril Njie, Randy Elder, et al. 2017. “Universal Motorcycle Helmet Laws to Reduce Injuries: A Community Guide Systematic Review.” American Journal of Preventive Medicine 52 (6): 820–32.
+
+Rojas Castro, Daniela, Rosemary M Delabre, and Jean-Michel Molina. 2019. “Give Prep a Chance: Moving on from the ‘Risk Compensation’ Concept.” Journal of the International AIDS Society 22: e25351.
+
+To, Kelvin Kai-Wang, Owen Tak-Yin Tsang, Wai-Shing Leung, Anthony Raymond Tam, Tak-Chiu Wu, David Christopher Lung, Cyril Chik-Yan Yip, et al. 2020. “Temporal profiles of viral load in posterior oropharyngeal saliva samples and serum antibody responses during infection by SARS-CoV-2: an observational cohort study.” Lancet Infect. Dis. 0 (0). https://doi.org/10.1016/S1473-3099(20)30196-1.
+
+Wei, Wycliffe E. 2020. “Presymptomatic Transmission of SARS-CoV-2 â€” Singapore, January 23â€“March 16, 2020.” MMWR. Morbidity and Mortality Weekly Report 69. https://doi.org/10.15585/mmwr.mm6914e1.
+
+Wells, WF. 1934. “On Air-Borne Infection: Study Ii. Droplets and Droplet Nuclei.” American Journal of Epidemiology 20 (3): 611–18.
+
+Yan, Jing, Suvajyoti Guha, Prasanna Hariharan, and Matthew Myers. 2019. “Modeling the Effectiveness of Respiratory Protective Devices in Reducing Influenza Outbreak.” Risk Analysis 39 (3): 647–61. https://doi.org/10.1111/risa.13181.
+
+Zhang, Juanjuan, Maria Litvinova, Wei Wang, Yan Wang, Xiaowei Deng, Xinghui Chen, Mei Li, et al. 2020. “Evolving Epidemiology and Transmission Dynamics of Coronavirus Disease 2019 Outside Hubei Province, China: A Descriptive and Modelling Study.” The Lancet Infectious Diseases 0 (0). https://doi.org/10.1016/S1473-3099(20)30230-9.
+
+Zou, Lirong, Feng Ruan, Mingxing Huang, Lijun Liang, Huitao Huang, Zhongsi Hong, Jianxiang Yu, et al. 2020. “SARS-CoV-2 Viral Load in Upper Respiratory Specimens of Infected Patients.” New England Journal of Medicine 382 (12): 1177–9. https://doi.org/10.1056/NEJMc2001737.
+
+

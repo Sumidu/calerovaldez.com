@@ -3,7 +3,7 @@
 type = "blank"
 headless = true  # Homepage is headless, other widget pages are not.
 weight = 10
-active = true  # Activate this widget? true/false
+active = false  # Activate this widget? true/false
 
 title = ""
 subtitle = ""

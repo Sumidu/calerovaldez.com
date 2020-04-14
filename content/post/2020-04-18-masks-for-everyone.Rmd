@@ -30,8 +30,6 @@ set.seed(1)
 ```
 
 
-# Masken für alle? Die Wissenschaft sagt ja.
-> Verfasst am 13. Apr 2020 von Professor Trisha Greenhalgh OBE und Jeremy Howard.
 > Übersetzt: André Calero Valdez (+ DeepL).
 
 Soll man nun Masken tragen oder nicht? Sicher, es ist kompliziert. Aber nicht so kompliziert, wie manche Leute unterstellen. Wir haben uns die Forschung angeschaut (siehe unsere Veröffentlichungen "Face Masks Against COVID-19: An Evidence Review" - mit 84 Referenzen! - und "Face masks for the public during the covid-19 crisis"). Hier ist eine Zusammenfassung der verschiedenen Evidenzströme und unsere Einschätzung, was das alles bedeutet.

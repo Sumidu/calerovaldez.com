@@ -77,7 +77,7 @@ subtitle = "List of Courses and Seminars"
 +++
 
 **Teaching information will be added soon.**
-A list of all courses can be found [here](/course/).
+A list of all courses can be found [here](/courses/).
 
 
 

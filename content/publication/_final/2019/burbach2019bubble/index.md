@@ -1,12 +1,12 @@
 ---
-title: "The Impact of Opinion Majorities in Social Networks and the Role of Digital Maturity"
+title: "Bubble Trouble: Strategies Against Filter Bubbles in Online Social Networks"
 authors:
-- Patrick Halbach
 - Laura Burbach
+- Patrick Halbach
 - Martina Ziefle
 - admin
 date: "2019-06-01T00:00:00Z"
-doi: "10.1007/978-3-030-22219-2_36"
+doi: "10.1007/978-3-030-22219-2_33"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2019-01-01T00:00:00Z"
@@ -21,21 +21,20 @@ publication_types: ["1"]
 publication: In *International Conference on Human-Computer Interaction*
 publication_short: In *International Conference on Human-Computer Interaction*
 
-abstract: The emergence of social media platforms like Facebook and their success in connecting people changed not only the way people interact and socialize, but also allows for new forms of spreading opinion. The obstacles to share opinions and reaching many known and unknown others, decreased noticeably, bringing up an abundance of opinions on diverse topics. We investigated the interplay of the spiral of silence and the bandwagon effect in online contexts and performed a web survey with 163 participants, confronting them with opinion majorities in user comments on four diverse topics. Our results show, that both phenomena reoccur in online contexts. However, they were not traceable to our examined user factors. This indicates, that a large proportion of users could fall for online bandwagon effects and the spiral of silence.
+abstract: In the recent past, some electoral decisions have gone against the pre-election expectations, what led to greater emphasis on social networking in the creation of filter bubbles. In this article, we examine whether Facebook usage motives, personality traits of Facebook users, and awareness of the filter bubble phenomenon influence whether and how Facebook users take action against filter bubbles. To answer these questions we conducted an online survey with 149 participants in Germany. While we found out that in our sample, the motives for using Facebook and the awareness of the filter bubble have an influence on whether a person consciously takes action against the filter bubble, we found no influence of personality traits. The results show that Facebook users know for the most part that filter bubbles exist, but still do little about them. Therefore it can be concluded that in today’s digital age, it is important not only to inform users about the existence of filter bubbles, but also about various possible strategies for dealing with them.
 
 
 tags:
-- Spiral of silence 
-- Bandwagon effect 
-- Opinion change 
-- Opinion majorities 
-- Digital maturity 
-- Human factors 
+- Filter bubble 
+- Echo chamber 
+- Avoidance strategies 
+- Big Five
+- Facebook usage motives 
 featured: true
 
 links:
-url_preprint: pdf/halbach2019follow.pdf
-url_pdf: https://link.springer.com/chapter/10.1007/978-3-030-22219-2_36
+url_preprint: pdf/burbach2019bubble.pdf
+url_pdf: https://link.springer.com/chapter/10.1007/978-3-030-22219-2_33
 url_code: ''
 url_dataset: ''
 url_poster: ''

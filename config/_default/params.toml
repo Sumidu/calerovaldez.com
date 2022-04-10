@@ -81,23 +81,23 @@ edit_page = {repo_url = "https://github.com/Sumidu/calerovaldez.com", content_di
 ############################
 
 # Enter contact details (optional). To hide a field, clear it to "".
-email = "calero-valdez@comm.rwth-aachen.de"
-phone = "+49 241 80-49239"
+email = "calerovaldez@imis.uni-luebeck.de"
+phone = "+49 451 3101-5114"
 
 # Address
 # For country_code, use the 2-letter ISO code (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 )
-address = {street = "Campus Boulevard 57", city = "Aachen", region = "NRW", postcode = "52074", country = "Germany", country_code = "DE"}
+address = {street = "Ratzeburger Allee 160", city = "Lübeck", region = "SH", postcode = "23562", country = "Germany", country_code = "DE"}
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "50.78394", longitude = "6.04323"}
+coordinates = {latitude = "53.83417", longitude = "10.70330"}
 
 # Directions for visitors to locate you.
-directions = "Room 03B08"
+directions = "1st Floor"
 
 # Office hours
 # A list of your office hours. To remove, set to an empty list `[]`.
-office_hours = ["Wednesday 09:00 to 10:00"]
+office_hours = []
 
 # Enter an optional link for booking appointments (e.g. calendly.com).
 appointment_url = "https://calendly.com/andrecalerovaldez/sprechstunde"
@@ -156,7 +156,7 @@ docs_section_pager = true  # Display pager in Docs layout (e.g. tutorials)?
 sharing = true
 
 # Link authors to their profile page? (true/false)
-link_authors = true
+link_authors = false
 
 # Load JS plugins
 #   E.g. To load `/assets/js/custom.js`, set `plugins_js = ["custom"]`.
@@ -251,7 +251,7 @@ plugins_js  = []
   #   3: OpenStreetMap (Mapbox)
   engine = 2
   api_key = ""
-  zoom = 15
+  zoom = 17
 
 ############################
 ## Marketing

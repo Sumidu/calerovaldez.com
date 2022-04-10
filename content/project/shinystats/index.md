@@ -8,7 +8,7 @@ draft = false
 tags = []
 
 # Project summary to display on homepage.
-summary = "Funded by the RWTH digitization of teaching fund."
+summary = "Funded by the RWTH digitization of teaching fund. Funding period: 2019"
 
 # Optional image to display on homepage.
 image_preview = "shinystats.png"

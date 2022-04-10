@@ -10,17 +10,17 @@ authors:
 superuser: true
 
 # Role/position
-role: Junior Research Group Leader
+role: Professor of Human-Computer Interaction and Usable Safety Engineering
 
 # Organizations/Affiliations
 organizations:
-- name: Human-Computer Interaction Center
-  url: "http://www.comm.rwth-aachen.de"
-- name: RWTH Aachen University
-  url: "http://www.rwth-aachen.de"
+- name: Institute for Multimedia and Interactive Systems
+  url: "http://www.imis.uni-luebeck.de"
+- name: University of Lübeck
+  url: "http://www.uni-luebeck.de.de"
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am the research group leader of the research group "Digitale Mündigkeit" studying effects human-algorithm interaction.
+bio: I am insterested in studying effects human-algorithm interaction and their impact on safety.
 
 interests:
 - Human-Computer Interaction
@@ -83,16 +83,10 @@ email: "andrecalerovaldez@gmail.com"
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-- Researchers
-- Visitors
+- Principal Investigators
 ---
 
-André Calero Valdez is Senior Researcher at the Chair of Communication Science and Human-Computer Interaction Center at RWTH Aachen University.
+André Calero Valdez is Professor of Human-Computer Interaction and Usable Safety Engineering at the University of Lübeck since 2022. 
+Here he conducts research on issues of human-computer interaction and usable safety in diverse application domains (e.g., eHealth, recommender systems, social media, information visualization, technology acceptance, Industry 4.0) using methods from computer science, psychology, and computational social sciences.
 
-He studied computer science at RWTH Aachen University, specializing in software engineering and psychology. Due to his excellent degree, he was awarded a doctoral scholarship by the RWTH Aachen University. In his dissertation, André dealt with user-centered development and evaluation of a small-screen device for diabetes patients. 
-
-Since 2013, André has been working as a post-doctoral fellow at RWTH Aachen University and deals with the interface between algorithms and humans in different application areas. He works in the fields of empirical social research, technology acceptance, eHeatlh, industry 4.0, recommendation systems, information visualization and social media.
-
-Since 2014 André is visiting professor at the Medical University Graz at the HCI-KDD Group with Prof. Dr. Andreas Holzinger, where his research focuses on the integration of computerized methods and machine learning in health care.
-
-Since 2018 André is the research group leader of the junior research group "Digitale Mündigkeit". In this research group, the interaction of recommendation algorithms, social bots, and fake news in social media are investigated.
+Until 2022, he was a senior researcher at the Department of Communication Science and the Human-Computer Interaction Center at RWTH Aachen University. There André had been head of the junior research group "Digital Mündigkeit" since 2018. He investigated the interplay of recommendation algorithms, social bots, and fake news in social media. Prior to that, André was a post-doc at RWTH Aachen University, working on the interface between algorithms and humans in various application areas (Cluster of Excellence Production Technology and BMBF project iNec, 2013-2017). Due to his excellent degree, he received a PhD scholarship at RWTH Aachen University in 2007. In his dissertation, André focused on the user-centered development and evaluation of a small-screen device for diabetes patients.

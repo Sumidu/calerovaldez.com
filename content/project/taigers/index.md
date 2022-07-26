@@ -8,7 +8,7 @@ draft = false
 tags = ["Artificial Intelligence", "Transparency", "Explainability", "xAI"]
 
 # Project summary to display on homepage.
-summary = "Funded by the Exploratory Research Space (ERS) by the DFG. Funding Period: 2012-2012"
+summary = "Funded by the Exploratory Research Space (ERS) by the DFG. Funding Period: 2021-2022"
 
 # Optional image to display on homepage.
 image_preview = ""

@@ -4,7 +4,7 @@
 
 This repository is currently hosted at https://nervous-northcutt-355c5f.netlify.com/
 
-
+Tested with Hugo Version 0.81.0
 
 ## How to build this website:
 Run `blogdown::build_site()`

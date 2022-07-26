@@ -24,11 +24,11 @@ bio: I am insterested in studying effects human-algorithm interaction and their 
 
 interests:
 - Human-Computer Interaction
+- Usable Safety and Privacy
+- Complex Systems and Modelling
 - Information Visualization
 - Recommender Systems
-- Data Science
 - Industry 4.0
-- Machine Learning
 - Social Networks
 - Technology Acceptance
 

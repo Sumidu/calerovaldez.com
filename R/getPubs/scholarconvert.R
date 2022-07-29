@@ -12,23 +12,61 @@ library(rcrossref)
 # Link to scholar page
 
 
-prof <- scholar::get_profile("K6EVDoYAAAAJ")
+#prof <- scholar::get_profile("K6EVDoYAAAAJ")
 publications <- scholar::get_publications("K6EVDoYAAAAJ")
 
 pubs <- publications %>% filter(year > 2019)
 
 source("R/getPubs/template.R")
 
+pubs$title
+
 # read source bib for generating cite keys
 bibsource <- here::here("R", "getPubs", "source.bib")
 my_bibsource <- readLines(bibsource)
 
 for(pub_index in 1:nrow(pubs)) {
+  #pub_index <- 26
   pub <- pubs[pub_index,]
   cat(paste0("Generating: ",pub$title,"\n"))
 
   pub$authors_full <- names(scholar::get_complete_authors(id= "K6EVDoYAAAAJ", pubid = pub$pubid))
   pub$abstract <- paste(scholar::get_publication_abstract(id= "K6EVDoYAAAAJ", pub_id = pub$pubid), collapse = " ")
+
+  # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
+  # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
+  # 7 = Thesis; 8 = Patent
+  pub_type <- 2
+  fullmeta <- scholar::get_publication_data_extended(id= "K6EVDoYAAAAJ", pub_id = pub$pubid)
+  pub$source <- pub$journal
+  pub$pub_type <- 2
+  if(!is.null(fullmeta$Source)){
+    pub$source <- fullmeta$Source
+    pub$pub_type <- 2
+  }
+  if(!is.null(fullmeta$Conference)){
+    pub$source <- fullmeta$Conference
+    pub$pub_type <- 1
+  }
+  if(!is.null(fullmeta$Journal)){
+    pub$source <- fullmeta$Journal
+    pub$pub_type <- 2
+  }
+  if(!is.null(fullmeta$Book)){
+    pub$source <- fullmeta$Book
+    pub$pub_type <- 6
+  }
+
+  cat(paste(names(fullmeta),"\n"))
+  pub$pub_type
+  pub$date <- fullmeta$`Publication date`
+  if(str_length(pub$date)<5){
+    pub$date <- paste0(pub$date, "/01/01")
+  }
+  if(str_length(pub$date)<8){
+    pub$date <- paste0(pub$date, "/01")
+  }
+
 
   #todo get full source name
   # scholar::get
@@ -73,10 +111,7 @@ for(pub_index in 1:nrow(pubs)) {
     str_replace("Andre Calero Valdez", "admin") %>%
     str_replace("Andre Calero Valdez", "admin")
 
-  # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
-  # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
-  # 7 = Thesis; 8 = Patent
-  pub_type <- 2
+
 
   # fill in template
   res <- tmplUpdate(
@@ -84,11 +119,11 @@ for(pub_index in 1:nrow(pubs)) {
     title = pub$title,
     authors = auths,
     pub_type = pub_type,
-    sourcename = pub$journal,
+    sourcename = pub$source,
     abstract = pub$abstract,
     tags = "- human-computer interaction",
     doi = pub$doi, # fix
-    pubdate = lubridate::format_ISO8601(lubridate::dmy_hms(paste0("01/01/",pub$year,"09:42:20"))),
+    pubdate = lubridate::format_ISO8601(lubridate::as_datetime(pub$date)),
     publishdate = lubridate::format_ISO8601(lubridate::now()),
     preprint_url = paste0("http://papers.calerovaldez.com/",citekey,".pdf"),
     public_url = pub$url
@@ -122,7 +157,7 @@ for(pub_index in 1:nrow(pubs)) {
   fileConn<-file(paste0(path, "/cite.bib"))
   writeLines(my_bibsource[start_line:last_line], fileConn)
   close(fileConn)
-  Sys.sleep(1)
+  Sys.sleep(5)
 }
 
 

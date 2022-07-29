@@ -5,10 +5,10 @@ authors:
 - Batoul Ajdadilish
 - Alexander P Henkel
 - admin
-date: "2020-01-01T09:42:20"
+date: "2020-04-21T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:16:59"
+publishDate: "2022-07-29T23:56:34"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -17,8 +17,8 @@ publishDate: "2022-07-29T02:16:59"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *Proceedings of the*
-publication_short: In *Proceedings of the*
+publication: In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems*
+publication_short: In *Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems*
 
 abstract: |
   With the advent of mixed reality devices such as the Microsoft HoloLens, developers have been faced with the challenge to utilize the third dimension in information visualization effectively. Research on stereoscopic devices has shown that three-dimensional representation can improve accuracy in specific tasks (eg, network visualization). Yet, so far the field has remained mute on the underlying mechanism. Our study systematically investigates the differences in user perception between a regular monitor and a mixed reality device. In a real-life within-subject experiment in the field with twenty-eight investment bankers, we assessed subjective and objective task performance with two-and three-dimensional systems, respectively. We tested accuracy with regard to position, size, and color using single and combined tasks. Our results do not show a significant difference in accuracy between mixed-reality and standard …

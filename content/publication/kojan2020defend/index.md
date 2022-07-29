@@ -6,10 +6,10 @@ authors:
 - Laura Burbach
 - Martina Ziefle
 - admin
-date: "2020-01-01T09:42:20"
+date: "2020-10-26T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:05"
+publishDate: "2022-07-29T23:56:58"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -18,8 +18,8 @@ publishDate: "2022-07-29T02:17:05"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *Multidisciplinary International Symposium on Disinformation in Open Online …*
-publication_short: In *Multidisciplinary International Symposium on Disinformation in Open Online …*
+publication: In *Multidisciplinary International Symposium on Disinformation in Open Online Media*
+publication_short: In *Multidisciplinary International Symposium on Disinformation in Open Online Media*
 
 abstract: |
   Both hate speech and disinformation negatively influence the internet’s potential for public deliberation and lead to polarization between political groups. In this paper, we examine the potential of counter speech to bolster public deliberation and reduce polarization. In two focus groups, we interview participants on what motivates them to engage in counter speech in general as well as counter speech favoring political adversaries. Firstly, we find a sharp distinction between participants who avoid engaging with hate speech and participants who actively engage with hate speech in order to combat it. Thus, the most important predictor for counter speech favoring adversaries is an individual’s propensity for counter speech in general. In turn, motivations for counter speech in general are a strong sense of morality, a perception of the internet as an important space for public deliberation, and a sense of …

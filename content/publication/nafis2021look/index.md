@@ -35,10 +35,10 @@ authors:
 - Sotirios Tsiodras
 - Steven Van Gucht
 - Peter Willeit
-date: "2021-01-01T09:42:20"
+date: "2021-07-01T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:29"
+publishDate: "2022-07-29T23:58:20"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -47,8 +47,8 @@ publishDate: "2022-07-29T02:17:29"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *arXiv e-prints, arXiv:*
-publication_short: In *arXiv e-prints, arXiv:*
+publication: In *arXiv e-prints*
+publication_short: In *arXiv e-prints*
 
 abstract: |
   How will the coronavirus disease 2019 (COVID-19) pandemic develop in the coming months and years? Based on an expert survey, we examine key aspects that are likely to influence COVID-19 in Europe. The future challenges and developments will strongly depend on the progress of national and global vaccination programs, the emergence and spread of variants of concern, and public responses to nonpharmaceutical interventions (NPIs). In the short term, many people are still unvaccinated, VOCs continue to emerge and spread, and mobility and population mixing is expected to increase over the summer. Therefore, policies that lift restrictions too much and too early risk another damaging wave. This challenge remains despite the reduced opportunities for transmission due to vaccination progress and reduced indoor mixing in the summer. In autumn 2021, increased indoor activity might accelerate the spread …

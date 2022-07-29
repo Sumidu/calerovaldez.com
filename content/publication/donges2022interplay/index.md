@@ -13,10 +13,10 @@ authors:
 - Michael Mäs
 - Kai Nagel
 - Viola Priesemann
-date: "2022-01-01T09:42:20"
+date: "2022-02-15T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:00"
+publishDate: "2022-07-29T23:56:40"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;

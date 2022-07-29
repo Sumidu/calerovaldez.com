@@ -5,10 +5,10 @@ authors:
 - Poornima Belavadi
 - Martina Ziefle
 - admin
-date: "2022-01-01T09:42:20"
+date: "2022-01-01T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:14"
+publishDate: "2022-07-29T23:57:27"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -17,8 +17,8 @@ publishDate: "2022-07-29T02:17:14"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *International Conference on Digital Human Modeling and Applications in …*
-publication_short: In *International Conference on Digital Human Modeling and Applications in …*
+publication: In *International Conference on Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management*
+publication_short: In *International Conference on Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management*
 
 abstract: |
   Due to global socio-economic changes, the European pension systems require several reforms that call for more active roles from the citizens. Past research has shown that traditional pension communication is often not read and understood by the majority of the population. Furthermore, the general interest of the people to learn about pension information is low. As a consequence, the accessibility of pension information poses a significant challenge. To address this challenge, we try to find out if data visualization can help in the perception of the complexity of pension data, and if a narrative can facilitate the understanding within a particular context in this research study. A data-driven storytelling application was built aiming to bridge the knowledge gap about the pension data among the citizens. In this paper, we describe the visualization and narrative structure development process with domain experts. We tested …

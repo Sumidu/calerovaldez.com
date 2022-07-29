@@ -12,10 +12,10 @@ authors:
 - Kai Nagel
 - admin
 - Viola Priesemann
-date: "2021-01-01T09:42:20"
+date: "2021-10-04T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:15"
+publishDate: "2022-07-29T23:57:33"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -24,8 +24,8 @@ publishDate: "2022-07-29T02:17:15"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *arXiv preprint arXiv:*
-publication_short: In *arXiv preprint arXiv:*
+publication: In *arXiv preprint arXiv:2110.01554*
+publication_short: In *arXiv preprint arXiv:2110.01554*
 
 abstract: |
   

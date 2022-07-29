@@ -4,10 +4,10 @@ authors:
 - Soumya Ray
 - Nicholas Danks
 - admin
-date: "2021-01-01T09:42:20"
+date: "2021-08-06T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:17"
+publishDate: "2022-07-29T23:57:39"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -16,8 +16,8 @@ publishDate: "2022-07-29T02:17:17"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *Estimating, and Visualizing Structural Equation Models in R (August*
-publication_short: In *Estimating, and Visualizing Structural Equation Models in R (August*
+publication: In *Estimating, and Visualizing Structural Equation Models in R (August 6, 2021)*
+publication_short: In *Estimating, and Visualizing Structural Equation Models in R (August 6, 2021)*
 
 abstract: |
   SEMinR seeks to bring the latest state-of-the-art advances in SEM methods to the R ecosystem. This package also seeks to make describing and analyzing SEMs easier for practitioners.

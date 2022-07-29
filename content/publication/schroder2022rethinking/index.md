@@ -7,10 +7,10 @@ authors:
 - Marco Putzu
 - Martina Ziefle
 - admin
-date: "2022-01-01T09:42:20"
+date: "2022-01-01T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:17:12"
+publishDate: "2022-07-29T23:57:21"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -19,8 +19,8 @@ publishDate: "2022-07-29T02:17:12"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: In *International Conference on Digital Human Modeling and Applications in …*
-publication_short: In *International Conference on Digital Human Modeling and Applications in …*
+publication: In *International Conference on Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management*
+publication_short: In *International Conference on Digital Human Modeling and Applications in Health, Safety, Ergonomics and Risk Management*
 
 abstract: |
   Pensions are the most important source of income for the elderly. However, old age poverty is a growing issue and conventional communication channels seem insufficient to inform people about how their current decisions will impact their future pensions. This paper provides a practical approach to addressing pension literacy through data visualization via metaphoric storytelling. Information visualizations aid in both communicating complex phenomena and serve an educational role. In particular, metaphors have been widely applied for educational purposes. We recruited participants (N = 11) for a qualitative user study. Participants’ prior knowledge of pensions was assessed before presenting them with an animated information visualisation about pensions using a tree metaphor. After the stimulus presentation, a semi structured interview was conducted with the participants to assess differences in pension …

@@ -8,10 +8,10 @@ authors:
 - Laura Burbach
 - admin
 - Martina Ziefle
-date: "2020-01-01T09:42:20"
+date: "2020-07-19T00:00:00"
 doi: ""
 
-publishDate: "2022-07-29T02:16:57"
+publishDate: "2022-07-29T23:56:28"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;

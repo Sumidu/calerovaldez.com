@@ -6,24 +6,32 @@ library(scholar)
 library(rcrossref)
 
 
+# After running this script you need to copy the folders into the publication
+# folder and add the pdfs to the static pdf route using the citekey as the pdf
+# name.
+
 # Todo:
-# detect Journal or Conference
 # Full source name from details page
 # Link to scholar page
+#
 
+scholar_id <- "K6EVDoYAAAAJ"
+publications <- scholar::get_publications(scholar_id)
 
-#prof <- scholar::get_profile("K6EVDoYAAAAJ")
-publications <- scholar::get_publications("K6EVDoYAAAAJ")
-
-pubs <- publications %>% filter(year > 2019)
+pubs <- publications %>% filter(year > 2021)
 
 source("R/getPubs/template.R")
 
 pubs$title
 
+# Test if this works in the long run
+all_bibtexs <- "https://scholar.googleusercontent.com/citations?view_op=export_citations&user=K6EVDoYAAAAJ&citsig=AMD79ooAAAAAYv1OHN-hF6NqMvN6u-7ENhGtL83AihSE"
+all_bibsources <- readLines(all_bibtexs)
+
 # read source bib for generating cite keys
-bibsource <- here::here("R", "getPubs", "source.bib")
+bibsource <- here::here("R", "getPubs", "2022-08-16-sources.bib")
 my_bibsource <- readLines(bibsource)
+
 
 for(pub_index in 1:nrow(pubs)) {
   #pub_index <- 26

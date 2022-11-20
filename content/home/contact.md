@@ -17,4 +17,4 @@ autolink = true
 #   2: formspree.io
 email_form = 0
 +++
-
+<a href="https://mstdn.science/@sumidu" rel="me" style="visibility:hidden;">Mastodon</a>

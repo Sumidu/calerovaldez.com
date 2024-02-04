@@ -2,8 +2,10 @@
 library(templates)
 library(tidyverse)
 library(magrittr)
-library(scholar)
+library(scholar) # requires the github version with my additions
 library(rcrossref)
+library(logging)
+
 
 
 # After running this script you need to copy the folders into the publication
@@ -15,125 +17,79 @@ library(rcrossref)
 # Link to scholar page
 #
 
+# Setup variables ----
+# Set scholar id
 scholar_id <- "K6EVDoYAAAAJ"
 publications <- scholar::get_publications(scholar_id)
 
-pubs <- publications %>% filter(year > 2021)
+pubs <- publications #%>% filter(year > 2021)
 
+# generated publication_md template function to the global environmnent
 source("R/getPubs/template.R")
 
-pubs$title
 
 # Test if this works in the long run
-all_bibtexs <- "https://scholar.googleusercontent.com/citations?view_op=export_citations&user=K6EVDoYAAAAJ&citsig=AMD79ooAAAAAYv1OHN-hF6NqMvN6u-7ENhGtL83AihSE"
-all_bibsources <- readLines(all_bibtexs)
+# Does not
+# Manual export of all bibtex from google scholar
+#all_bibtexs <- "https://scholar.googleusercontent.com/citations?view_op=export_citations&user=K6EVDoYAAAAJ&citsig=AM0yFCkAAAAAZcCq47RZIcw3RR5-WSaRETxeIok&hl=de"
+#all_bibsources <- readLines(all_bibtexs)
 
+# read source data ----
 # read source bib for generating cite keys
-bibsource <- here::here("R", "getPubs", "2022-08-16-sources.bib")
+# generate an accurate file with all bibtex source using scholars export here.
+bibsource <- here::here("R", "getPubs", "2024-02-04-pubs.bib")
 my_bibsource <- readLines(bibsource)
 
 
+source("R/getPubs/convert.R")
+cross_ref_data <- get_cr_list("André Calero Valdez", limit = nrow(pubs) * 2)
+
+
+missing_pdf <- c()
+# Loop ----
 for(pub_index in 1:nrow(pubs)) {
-  #pub_index <- 26
+
+  #pub_index <- 4
+  logging::loginfo(paste("**********************", pub_index, "**********************"))
   pub <- pubs[pub_index,]
-  cat(paste0("Generating: ",pub$title,"\n"))
 
-  pub$authors_full <- names(scholar::get_complete_authors(id= "K6EVDoYAAAAJ", pubid = pub$pubid))
-  pub$abstract <- paste(scholar::get_publication_abstract(id= "K6EVDoYAAAAJ", pub_id = pub$pubid), collapse = " ")
-
-  # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
-  # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
-  # 7 = Thesis; 8 = Patent
-  pub_type <- 2
-  fullmeta <- scholar::get_publication_data_extended(id= "K6EVDoYAAAAJ", pub_id = pub$pubid)
-  pub$source <- pub$journal
-  pub$pub_type <- 2
-  if(!is.null(fullmeta$Source)){
-    pub$source <- fullmeta$Source
-    pub$pub_type <- 2
-  }
-  if(!is.null(fullmeta$Conference)){
-    pub$source <- fullmeta$Conference
-    pub$pub_type <- 1
-  }
-  if(!is.null(fullmeta$Journal)){
-    pub$source <- fullmeta$Journal
-    pub$pub_type <- 2
-  }
-  if(!is.null(fullmeta$Book)){
-    pub$source <- fullmeta$Book
-    pub$pub_type <- 6
-  }
-
-  cat(paste(names(fullmeta),"\n"))
-  pub$pub_type
-  pub$date <- fullmeta$`Publication date`
-  if(str_length(pub$date)<5){
-    pub$date <- paste0(pub$date, "/01/01")
-  }
-  if(str_length(pub$date)<8){
-    pub$date <- paste0(pub$date, "/01")
-  }
+  pub <- convert(pub, scholar_id, cross_ref_data)
 
 
-  #todo get full source name
-  # scholar::get
-  pub$url <- scholar::get_publication_url(id= "K6EVDoYAAAAJ", pub_id = pub$pubid)
 
-  # fix
-  #rcrossref::cr_works_(query = pub$title, limit = 1)
-  pub$doi <- ""
-
-  #generate google citekey
-  stopwords <- c("a", "the", "on")
-
-  lastname <- pub$author %>%
-    str_split(", ") %>% extract2(1) %>% extract(1) %>% #get first author
-    str_split(" ") %>% extract2(1) %>% extract(2) %>% #get last name
-    str_to_lower() %>%
-    str_replace_all("ö", "o") %>%
-    str_replace_all("ä", "a") %>%
-    str_replace_all("ü", "u")
-
-  title_words <- pub$title %>%
-    str_split(" ") %>% extract2(1) %>% #get all words
-    str_to_lower() %>%
-    str_replace_all("[[:punct:]]", "")
-
-  title_word <- ""
-  # iterate over words
-  for (i in 1:length(title_words)) {
-    title_word <- title_words[i]
-    if(title_word %in% stopwords) { # ignore stop words
-      next
-    }
-    break
-  }
-  # calero2022amazing
-  citekey <- paste0(lastname, pub$year, title_word)
-  cat(paste0(" Citekey: ",citekey,"\n"))
+  # generate citekey
+  citekey <- gen_citekey(pub)
 
   # markdown author list
-  auths <- pub$authors_full %>% str_split(", ") %>% extract2(1) %>% paste("-", ., collapse = "\n") %>%
+  auths <-
+    pub$authors_full %>%
+    str_split(", ") %>%
+    extract2(1) %>% paste("-", ., collapse = "\n") %>%
     str_replace("André Calero Valdez", "admin") %>%
     str_replace("Andre Calero Valdez", "admin") %>%
     str_replace("Andre Calero Valdez", "admin")
 
+  my_preprint_url <- paste0("http://papers.calerovaldez.com/",citekey,".pdf")
 
+  # check if pdf exists
+  if(!RCurl::url.exists(my_preprint_url)){
+    missing_pdf <- c(missing_pdf, citekey)
+    logging::logwarn(paste("Missing pdf for", my_preprint_url))
+  }
 
   # fill in template
   res <- tmplUpdate(
     publication_md,
     title = pub$title,
     authors = auths,
-    pub_type = pub_type,
+    pub_type = pub$pub_type,
     sourcename = pub$source,
     abstract = pub$abstract,
     tags = "- human-computer interaction",
     doi = pub$doi, # fix
     pubdate = lubridate::format_ISO8601(lubridate::as_datetime(pub$date)),
     publishdate = lubridate::format_ISO8601(lubridate::now()),
-    preprint_url = paste0("http://papers.calerovaldez.com/",citekey,".pdf"),
+    preprint_url = my_preprint_url,
     public_url = pub$url
   )
 
@@ -149,26 +105,29 @@ for(pub_index in 1:nrow(pubs)) {
 
   # generate cite.bib
 
-
+  logging::loginfo(paste("Looking for citekey", citekey, "in bibsource"))
   start_line <- str_which(my_bibsource, citekey)
   last_line <- start_line
   repeat{
     last_line <- last_line + 1
-    if(my_bibsource[last_line]==""){
+    if(str_length(my_bibsource[last_line])==0){
       break
     }
     if(last_line == length(my_bibsource)){
       break
     }
   }
+  logging::loginfo(paste("Found citekey", citekey, "in bibsource", "from", start_line, "to", last_line))
+  logging::loginfo(paste(my_bibsource[start_line:last_line]))
 
   fileConn<-file(paste0(path, "/cite.bib"))
   writeLines(my_bibsource[start_line:last_line], fileConn)
   close(fileConn)
-  Sys.sleep(5)
+  Sys.sleep(4)
 }
 
-
+logging::loginfo("Missing pdfs:")
+logging::loginfo(missing_pdf)
 
 
 

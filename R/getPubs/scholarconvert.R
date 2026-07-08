@@ -2,9 +2,23 @@
 library(templates)
 library(tidyverse)
 library(magrittr)
-library(scholar) # requires the github version with my additions
+library(scholar) # get_complete_authors/get_publication_data_extended etc. are now upstream on CRAN (>= 0.2.6)
 library(rcrossref)
 library(logging)
+
+# Google Scholar sometimes serves pages with a declared ISO-8859-1 charset.
+# scholar's internal `page %>% read_html()` calls ignore that declared charset
+# and assume UTF-8, corrupting accented names (e.g. "Alagöz" -> "Alag�z").
+# httr::content(x, as = "text") without a forced encoding respects the
+# response's declared charset, so route xml2's response-reading through it.
+xml2_ns <- asNamespace("xml2")
+patched_read_html_response <- function(x, encoding = "", ..., options = c("RECOVER", "NOERROR", "NOBLANKS")) {
+  xml2::read_html(httr::content(x, as = "text"), encoding = encoding, ..., options = options)
+}
+environment(patched_read_html_response) <- xml2_ns
+unlockBinding("read_html.response", xml2_ns)
+assignInNamespace("read_html.response", patched_read_html_response, ns = "xml2")
+lockBinding("read_html.response", xml2_ns)
 
 
 
@@ -37,7 +51,7 @@ source("R/getPubs/template.R")
 # read source data ----
 # read source bib for generating cite keys
 # generate an accurate file with all bibtex source using scholars export here.
-bibsource <- here::here("R", "getPubs", "2024-02-04-pubs.bib")
+bibsource <- here::here("R", "getPubs", "2026-07-07-pubs.bib")
 my_bibsource <- readLines(bibsource)
 
 

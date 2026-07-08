@@ -106,13 +106,6 @@ fix_date <- function(date){
   newdate
 }
 
-#' Get the DOI from crossref
-#' @param author The author name
-#' @param limit The maximum number of results returned
-#' @return data frame with results for author
-#' @export
-get_cr_list <- memoise::memoise(get_cr_list_)
-
 #' Internal function to access the API
 #' @param author The author name
 #' @param limit The maximum number of results returned
@@ -125,6 +118,13 @@ get_cr_list_ <- function(author = "André Calero Valdez", limit = 200){
   logging::loginfo(paste("Found ", nrow(crf_results$data), " publications for ", author))
   return(crf_results$data)
 }
+
+#' Get the DOI from crossref
+#' @param author The author name
+#' @param limit The maximum number of results returned
+#' @return data frame with results for author
+#' @export
+get_cr_list <- memoise::memoise(get_cr_list_)
 
 
 #' Get the DOI from crossref
